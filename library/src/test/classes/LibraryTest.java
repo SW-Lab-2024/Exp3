@@ -17,21 +17,18 @@ public class LibraryTest {
     @BeforeEach
     public void setUp() {
         library = new Library();
+        Book book = new Book("Book-1", "Author-1", 1);
+        library.addBook(book);
     }
 
     private ArrayList<Object> createKeys(Object... keys) {
         return new ArrayList<>(List.of(keys));
     }
 
-    private void addBookToLibrary(String title, String author, int id) {
-        Book book = new Book(title, author, id);
-        library.addBook(book);
-    }
-
     @Test
     @DisplayName("searchBooks must return null when no book is found")
     public void searchBooksNoBookFound() {
-        ArrayList<Object> keys = createKeys(1);
+        ArrayList<Object> keys = createKeys(100);
         Assertions.assertNull(library.searchBooks(SearchByType.ID, keys));
     }
 
@@ -46,7 +43,6 @@ public class LibraryTest {
     @DisplayName("Return some books when search matches with type of id")
     public void searchBooksSearchById() {
         ArrayList<Object> keys = createKeys(1);
-        addBookToLibrary("Book-1", "Author-1", 1);
         ArrayList<Book> result = library.searchBooks(SearchByType.ID, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
@@ -57,7 +53,6 @@ public class LibraryTest {
     @DisplayName("Return some books when search matches with type of author")
     public void searchBooksSearchByAuthor() {
         ArrayList<Object> keys = createKeys("Author-1");
-        addBookToLibrary("Book-1", "Author-1", 1);
         ArrayList<Book> result = library.searchBooks(SearchByType.AUTHOR, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
@@ -68,7 +63,6 @@ public class LibraryTest {
     @DisplayName("Return some books when search matches with type of title")
     public void searchBooksSearchByTitle() {
         ArrayList<Object> keys = createKeys("Book-1");
-        addBookToLibrary("Book-1", "Author-1", 1);
         ArrayList<Book> result = library.searchBooks(SearchByType.TITLE, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
