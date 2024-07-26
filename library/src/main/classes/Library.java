@@ -109,6 +109,15 @@ public class Library {
                     }
                 }
                 break;
+            case TITLE:
+                for (Book book : books) {
+                    for (Object key : keys) {
+                        if (book.getTitle().equals((String) key)) {
+                            result.add(book);
+                        }
+                    }
+                }
+                break;
             default:
                 throw new IllegalArgumentException();
         }
