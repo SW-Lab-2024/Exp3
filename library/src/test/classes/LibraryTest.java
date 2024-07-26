@@ -21,6 +21,13 @@ public class LibraryTest {
         library.addBook(book);
     }
 
+    private Book assertIsAnythingReturned(SearchByType searchByType, ArrayList<Object> keys) {
+        ArrayList<Book> result = library.searchBooks(searchByType, keys);
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(1, result.size());
+        return result.get(0);
+    }
+
     private ArrayList<Object> createKeys(Object... keys) {
         return new ArrayList<>(List.of(keys));
     }
@@ -35,37 +42,25 @@ public class LibraryTest {
     @Test
     @DisplayName("searchBooks must throw an exception when search is by name")
     public void searchBooksSearchByName() {
-        ArrayList<Object> keys = createKeys("Book-1");
-        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchBooks(SearchByType.NAME, keys));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchBooks(SearchByType.NAME, createKeys("Book-1")));
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of id")
     public void searchBooksSearchById() {
-        ArrayList<Object> keys = createKeys(1);
-        ArrayList<Book> result = library.searchBooks(SearchByType.ID, keys);
-        Assertions.assertNotNull(result);
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals(1, result.get(0).getId());
+        Assertions.assertEquals(1, assertIsAnythingReturned(SearchByType.ID, createKeys(1)).getId());
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of author")
     public void searchBooksSearchByAuthor() {
-        ArrayList<Object> keys = createKeys("Author-1");
-        ArrayList<Book> result = library.searchBooks(SearchByType.AUTHOR, keys);
-        Assertions.assertNotNull(result);
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals("Author-1", result.get(0).getAuthor());
+        Assertions.assertEquals("Author-1", assertIsAnythingReturned(SearchByType.AUTHOR, createKeys("Author-1")).getAuthor());
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of title")
     public void searchBooksSearchByTitle() {
-        ArrayList<Object> keys = createKeys("Book-1");
-        ArrayList<Book> result = library.searchBooks(SearchByType.TITLE, keys);
-        Assertions.assertNotNull(result);
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals("Book-1", result.get(0).getTitle());
+        Assertions.assertEquals("Book-1", assertIsAnythingReturned(SearchByType.TITLE, createKeys("Book-1")).getTitle());
+
     }
 }
