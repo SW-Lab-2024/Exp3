@@ -63,4 +63,15 @@ public class LibraryTest {
         Assertions.assertEquals(1, result.size());
         Assertions.assertEquals("Author-1", result.get(0).getAuthor());
     }
+
+    @Test
+    @DisplayName("Return some books when search matches with type of title")
+    public void searchBooksSearchByTitle() {
+        ArrayList<Object> keys = createKeys("Author-1");
+        addBookToLibrary("Book-1", "Author-1", 1);
+        ArrayList<Book> result = library.searchBooks(SearchByType.TITLE, keys);
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(1, result.size());
+        Assertions.assertEquals("Book-1", result.get(0).getAuthor());
+    }
 }
