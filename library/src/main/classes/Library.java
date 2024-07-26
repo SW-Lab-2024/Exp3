@@ -88,10 +88,6 @@ public class Library {
      * @return             The list of books that match the search criteria. Returns null if search type is name.
      */
     public ArrayList<Book> searchBooks(SearchByType searchByType, ArrayList<Object> keys) {
-        if (searchByType == SearchByType.NAME) {
-            throw new IllegalArgumentException();
-        }
-
         ArrayList<Book> result = new ArrayList<>();
         switch (searchByType) {
             case ID:
@@ -104,7 +100,7 @@ public class Library {
                 }
                 break;
             default:
-                return null;
+                throw new IllegalArgumentException();
         }
         return result.isEmpty() ? null : result;
     }
