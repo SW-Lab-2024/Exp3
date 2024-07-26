@@ -62,4 +62,10 @@ public class LibraryTest {
     public void searchBooksSearchByTitle() {
         Assertions.assertEquals("Book-1", assertIsAnythingReturned(SearchByType.TITLE, createKeys("Book-1")).getTitle());
     }
+
+    @Test
+    @DisplayName("Throw exception when key's tupe does not match with search type")
+    public void searchBooksKeyTypeNotMatchSearchType() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchBooks(SearchByType.ID, createKeys("book1", 1)));
+    }
 }
