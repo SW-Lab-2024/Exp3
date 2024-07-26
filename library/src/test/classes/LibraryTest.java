@@ -23,6 +23,11 @@ public class LibraryTest {
         return new ArrayList<>(List.of(keys));
     }
 
+    private void addBookToLibrary(String title, String author, int id) {
+        Book book = new Book(title, author, id);
+        library.addBook(book);
+    }
+
     @Test
     @DisplayName("searchBooks must return null when no book is found")
     public void searchBooksNoBookFound() {
@@ -41,23 +46,21 @@ public class LibraryTest {
     @DisplayName("Return some books when search matches with type of id")
     public void searchBooksSearchById() {
         ArrayList<Object> keys = createKeys(1);
-        Book book1 = new Book("Book-1", "Author-1", 1);
-        library.addBook(book1);
+        addBookToLibrary("Book-1", "Author-1", 1);
         ArrayList<Book> result = library.searchBooks(SearchByType.ID, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals(book1, result.get(0));
+        Assertions.assertEquals(1, result.get(0).getId());
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of author")
     public void searchBooksSearchByAuthor() {
         ArrayList<Object> keys = createKeys("Author-1");
-        Book book1 = new Book("Book-1", "Author-1", 1);
-        library.addBook(book1);
-        ArrayList<Book> result = library.searchBooks(SearchByType.TITLE, keys);
+        addBookToLibrary("Book-1", "Author-1", 1);
+        ArrayList<Book> result = library.searchBooks(SearchByType.AUTHOR, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals(book1, result.get(0));
+        Assertions.assertEquals("Author-1", result.get(0).getAuthor());
     }
 }
