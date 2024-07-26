@@ -1,6 +1,7 @@
 package main.classes;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books;
@@ -94,6 +95,15 @@ public class Library {
                 for (Book book : books) {
                     for (Object key : keys) {
                         if (book.getId() == (Integer) key) {
+                            result.add(book);
+                        }
+                    }
+                }
+                break;
+            case AUTHOR:
+                for (Book book : books) {
+                    for (Object key : keys) {
+                        if (book.getAuthor().equals((String) key)) {
                             result.add(book);
                         }
                     }
