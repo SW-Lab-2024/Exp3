@@ -1,5 +1,6 @@
 package test.classes;
 
+import main.classes.Book;
 import main.classes.Library;
 import main.classes.SearchByType;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,19 @@ public class LibraryTest {
     @Test
     @DisplayName("searchBooks must throw an exception when search is by name")
     public void searchBooksSearchByName() {
-        ArrayList<Object> keys = new ArrayList<>(List.of("Boostan"));
+        ArrayList<Object> keys = createKeys("Book-1");
         Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchBooks(SearchByType.NAME, keys));
+    }
+
+    @Test
+    @DisplayName("Return some books when search matches with type of id")
+    public void searchBooksSearchById() {
+        ArrayList<Object> keys = createKeys(1);
+        Book book1 = new Book("Book-1", "Author-1", 1);
+        library.addBook(book1);
+        ArrayList<Book> result = library.searchBooks(SearchByType.ID, keys);
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(1, result.size());
+        Assertions.assertEquals(book1, result.get(0));
     }
 }
