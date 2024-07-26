@@ -83,11 +83,23 @@ public class Library {
     private boolean matches(Book book, SearchByType searchByType, Object key) {
         switch (searchByType) {
             case ID:
-                return book.getId() == (Integer) key;
+                if (key instanceof Integer) {
+                    return book.getId() == (Integer) key;
+                } else {
+                    throw new IllegalArgumentException();
+                }
             case AUTHOR:
-                return book.getAuthor().equals(key);
+                if (key instanceof String) {
+                    return book.getAuthor().equals(key);
+                } else {
+                    throw new IllegalArgumentException();
+                }
             case TITLE:
-                return book.getTitle().equals(key);
+                if (key instanceof String) {
+                    return book.getTitle().equals(key);
+                } else {
+                    throw new IllegalArgumentException();
+                }
             default:
                 throw new IllegalArgumentException();
         }
