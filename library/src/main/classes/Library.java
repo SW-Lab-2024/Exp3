@@ -91,7 +91,22 @@ public class Library {
         if (searchByType == SearchByType.NAME) {
             throw new IllegalArgumentException();
         }
-        return null;
+
+        ArrayList<Book> result = new ArrayList<>();
+        switch (searchByType) {
+            case ID:
+                for (Book book : books) {
+                    for (Object key : keys) {
+                        if (book.getId() == (Integer) key) {
+                            result.add(book);
+                        }
+                    }
+                }
+                break;
+            default:
+                return null;
+        }
+        return result.isEmpty() ? null : result;
     }
 
     /**
