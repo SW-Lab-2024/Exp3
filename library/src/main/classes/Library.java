@@ -80,6 +80,19 @@ public class Library {
         return null;
     }
 
+    private boolean matches(Book book, SearchByType searchByType, Object key) {
+        switch (searchByType) {
+            case ID:
+                return book.getId() == (Integer) key;
+            case AUTHOR:
+                return book.getAuthor().equals(key);
+            case TITLE:
+                return book.getTitle().equals(key);
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     /**
      * Returns a list of books where the specified field matches any of the keys provided.
      * The specified field is determined by the searchByType argument, which can be id, title, or author (but not name).
@@ -90,37 +103,15 @@ public class Library {
      */
     public ArrayList<Book> searchBooks(SearchByType searchByType, ArrayList<Object> keys) {
         ArrayList<Book> result = new ArrayList<>();
-        switch (searchByType) {
-            case ID:
-                for (Book book : books) {
-                    for (Object key : keys) {
-                        if (book.getId() == (Integer) key) {
-                            result.add(book);
-                        }
-                    }
+
+        for (Book book : books) {
+            for (Object key : keys) {
+                if (matches(book, searchByType, key)) {
+                    result.add(book);
                 }
-                break;
-            case AUTHOR:
-                for (Book book : books) {
-                    for (Object key : keys) {
-                        if (book.getAuthor().equals((String) key)) {
-                            result.add(book);
-                        }
-                    }
-                }
-                break;
-            case TITLE:
-                for (Book book : books) {
-                    for (Object key : keys) {
-                        if (book.getTitle().equals((String) key)) {
-                            result.add(book);
-                        }
-                    }
-                }
-                break;
-            default:
-                throw new IllegalArgumentException();
+            }
         }
+
         return result.isEmpty() ? null : result;
     }
 

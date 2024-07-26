@@ -61,6 +61,5 @@ public class LibraryTest {
     @DisplayName("Return some books when search matches with type of title")
     public void searchBooksSearchByTitle() {
         Assertions.assertEquals("Book-1", assertIsAnythingReturned(SearchByType.TITLE, createKeys("Book-1")).getTitle());
-
     }
 }
