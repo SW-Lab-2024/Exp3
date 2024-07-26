@@ -72,6 +72,6 @@ public class LibraryTest {
         ArrayList<Book> result = library.searchBooks(SearchByType.TITLE, keys);
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals("Book-1", result.get(0).getAuthor());
+        Assertions.assertEquals("Book-1", result.get(0).getTitle());
     }
 }
