@@ -34,6 +34,7 @@ public class LibraryTest {
     @DisplayName("lendBook happy day!")
     public void lendBookHappyDayTest() {
         Assertions.assertTrue(library.lendBook(book, student));
+        Assertions.assertTrue(library.hasStudent(student));
         Assertions.assertFalse(library.hasBook(book));
         Assertions.assertTrue(student.hasBook(book));
     }
@@ -43,6 +44,7 @@ public class LibraryTest {
     public void lendBookWhenLibraryDoesNotHaveBook() {
         Book book = new Book("Book-1", "Author-1", 1);
         Assertions.assertFalse(library.lendBook(book, student));
+        Assertions.assertTrue(library.hasStudent(student));
         Assertions.assertFalse(library.hasBook(book));
         Assertions.assertFalse(student.hasBook(book));
     }
@@ -52,6 +54,7 @@ public class LibraryTest {
     public void lendBookWhenLibraryDoesNotHaveStudent() {
         Student student = new Student("Student-1", 1);
         Assertions.assertFalse(library.lendBook(book, student));
+        Assertions.assertFalse(library.hasStudent(student));
         Assertions.assertTrue(library.hasBook(book));
         Assertions.assertFalse(student.hasBook(book));
     }
@@ -61,6 +64,7 @@ public class LibraryTest {
     public void lendBookWhenStudentHasBookAlready() {
         student.addBook(book);
         Assertions.assertFalse(library.lendBook(book, student));
+        Assertions.assertTrue(library.hasStudent(student));
         Assertions.assertTrue(library.hasBook(book));
         Assertions.assertTrue(student.hasBook(book));
     }
