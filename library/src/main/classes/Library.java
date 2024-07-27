@@ -23,6 +23,10 @@ public class Library {
         return this.books.contains(book);
     }
 
+    public boolean hasStudent(Student student) {
+        return this.students.contains(student);
+    }
+
     /**
      * Lends a book to a student. Removes the book from the library and adds it to the student's list.
      * This operation fails if the library doesn't have the student or the book or the student already has the book.
@@ -32,7 +36,7 @@ public class Library {
      * @return Returns true if the operation is successful and false otherwise.
      */
     public boolean lendBook(Book book, Student student) {
-        if (!this.books.contains(book)) {
+        if (!this.hasBook(book)) {
             System.out.println("!! Book " + book.getTitle() + " not registered.");
             return false;
         }
@@ -40,7 +44,7 @@ public class Library {
         /*
          * We should check that the student is registered to the library or not.
          */
-        if (!this.students.contains(student)) {
+        if (!this.hasStudent(student)) {
             System.out.println("!! Student " + student.getName() + " not registered.");
             return false;
         }

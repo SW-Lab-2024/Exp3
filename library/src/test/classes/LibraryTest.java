@@ -14,12 +14,16 @@ import java.util.List;
 
 public class LibraryTest {
     private Library library;
+    private Book book;
+    private Student student;
 
     @BeforeEach
     public void setUp() {
         library = new Library();
-        Book book = new Book("Book-1", "Author-1", 1);
+        book = new Book("Book-1", "Author-1", 1);
+        student = new Student("Student-1", 1);
         library.addBook(book);
+        library.addStudent(student);
     }
 
     /*
@@ -29,11 +33,6 @@ public class LibraryTest {
     @Test
     @DisplayName("lendBook happy day!")
     public void lendBookHappyDayTest() {
-        Library library = new Library();
-        Book book = new Book("Book-1", "Author-1", 1);
-        Student student = new Student("Student-1", 1);
-        library.addBook(book);
-        library.addStudent(student);
         Assertions.assertTrue(library.lendBook(book, student));
         Assertions.assertFalse(library.hasBook(book));
         Assertions.assertTrue(student.hasBook(book));
@@ -42,10 +41,7 @@ public class LibraryTest {
     @Test
     @DisplayName("lendBook when the library does not have the book.")
     public void lendBookWhenLibraryDoesNotHaveBook() {
-        Library library = new Library();
         Book book = new Book("Book-1", "Author-1", 1);
-        Student student = new Student("Student-1", 1);
-        library.addStudent(student);
         Assertions.assertFalse(library.lendBook(book, student));
         Assertions.assertFalse(library.hasBook(book));
         Assertions.assertFalse(student.hasBook(book));
@@ -54,10 +50,7 @@ public class LibraryTest {
     @Test
     @DisplayName("lendBook when the library does not have the student.")
     public void lendBookWhenLibraryDoesNotHaveStudent() {
-        Library library = new Library();
-        Book book = new Book("Book-1", "Author-1", 1);
         Student student = new Student("Student-1", 1);
-        library.addBook(book);
         Assertions.assertFalse(library.lendBook(book, student));
         Assertions.assertTrue(library.hasBook(book));
         Assertions.assertFalse(student.hasBook(book));
