@@ -73,6 +73,55 @@ public class LibraryTest {
      * End of lendBook test block
      */
 
+    /*
+     * Begin of returnBook test block
+     */
+
+    @Test
+    @DisplayName("returnBook happy day!")
+    public void returnBookHappyDayTest() {
+        Library library = new Library();
+        Book book = new Book("Book-1", "Author-1", 1);
+        Student student = new Student("Student-1", 1);
+        library.addStudent(student);
+        student.addBook(book);
+        Assertions.assertTrue(library.returnBook(book, student));
+        Assertions.assertTrue(library.hasStudent(student));
+        Assertions.assertTrue(library.hasBook(book));
+        Assertions.assertFalse(student.hasBook(book));
+    }
+
+    @Test
+    @DisplayName("returnBook when the library does not have the student.")
+    public void returnBookWhenLibraryDoesNotHaveStudent() {
+        Library library = new Library();
+        Book book = new Book("Book-1", "Author-1", 1);
+        Student student = new Student("Student-1", 1);
+        student.addBook(book);
+        Assertions.assertFalse(library.returnBook(book, student));
+        Assertions.assertFalse(library.hasStudent(student));
+        Assertions.assertFalse(library.hasBook(book));
+        Assertions.assertTrue(student.hasBook(book));
+    }
+
+    @Test
+    @DisplayName("returnBook when the student does not have the book.")
+    public void returnBookWhenStudentDoesNotHaveBook() {
+        Library library = new Library();
+        Book book = new Book("Book-1", "Author-1", 1);
+        Student student = new Student("Student-1", 1);
+        library.addStudent(student);
+        Assertions.assertFalse(library.returnBook(book, student));
+        Assertions.assertTrue(library.hasStudent(student));
+        Assertions.assertFalse(library.hasBook(book));
+        Assertions.assertFalse(student.hasBook(book));
+    }
+
+    /*
+     * End of returnBook test block
+     */
+
+
     private Book assertIsAnythingReturned(SearchByType searchByType, ArrayList<Object> keys) {
         ArrayList<Book> result = library.searchBooks(searchByType, keys);
         Assertions.assertNotNull(result);
