@@ -117,6 +117,9 @@ public class LibraryTest {
      * End of returnBook test block
      */
 
+    /*
+     * Begin of searchBooks test block
+     */
 
     private Book assertIsAnythingReturned(SearchByType searchByType, ArrayList<Object> keys) {
         ArrayList<Book> result = library.searchBooks(searchByType, keys);
@@ -165,4 +168,8 @@ public class LibraryTest {
     public void searchBooksKeyTypeNotMatchSearchType() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchBooks(SearchByType.ID, createKeys("book1", 1)));
     }
+
+    /*
+     * End of searchBooks test block
+     */
 }
