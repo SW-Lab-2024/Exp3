@@ -80,10 +80,6 @@ public class LibraryTest {
     @Test
     @DisplayName("returnBook happy day!")
     public void returnBookHappyDayTest() {
-        Library library = new Library();
-        Book book = new Book("Book-1", "Author-1", 1);
-        Student student = new Student("Student-1", 1);
-        library.addStudent(student);
         student.addBook(book);
         Assertions.assertTrue(library.returnBook(book, student));
         Assertions.assertTrue(library.hasStudent(student));

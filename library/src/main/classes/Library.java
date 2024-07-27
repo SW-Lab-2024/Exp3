@@ -69,19 +69,23 @@ public class Library {
      * @return Returns true if the operation is successful and false otherwise.
      */
     public boolean returnBook(Book book, Student student) {
-        if (!this.students.contains(student)) {
+        if (!this.hasStudent(student)) {
             System.out.println("!! Student " + student.getName() + " not registered.");
             return false;
         }
-        if (student.hasBook(book)) {
-            student.removeBook(book);
-            this.books.add(book);
-            System.out.println(student.getName() + " returned " + book.getTitle() + ".");
-            return true;
+
+        if (!student.hasBook(book)) {
+            System.out.println("!! " + student.getName() + " doesn't have the book.");
+            return false;
         }
 
-        System.out.println("!! " + student.getName() + " doesn't have the book.");
-        return false;
+        /*
+         * We should remove the book from the student's list.
+         */
+        student.removeBook(book);
+        this.books.add(book);
+        System.out.println(student.getName() + " returned " + book.getTitle() + ".");
+        return true;
     }
 
     /**
