@@ -56,6 +56,15 @@ public class LibraryTest {
         Assertions.assertFalse(student.hasBook(book));
     }
 
+    @Test
+    @DisplayName("lendBook when the student has the book already.")
+    public void lendBookWhenStudentHasBookAlready() {
+        student.addBook(book);
+        Assertions.assertFalse(library.lendBook(book, student));
+        Assertions.assertTrue(library.hasBook(book));
+        Assertions.assertTrue(student.hasBook(book));
+    }
+
     /*
      * End of lendBook test block
      */
