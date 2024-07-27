@@ -1,7 +1,6 @@
 package main.classes;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books;
@@ -20,13 +19,17 @@ public class Library {
         students.add(student);
     }
 
+    public boolean hasBook(Book book) {
+        return this.books.contains(book);
+    }
+
     /**
      * Lends a book to a student. Removes the book from the library and adds it to the student's list.
      * This operation fails if the library doesn't have the student or the book or the student already has the book.
      *
      * @param book    The book to be lent.
      * @param student The student who is going to borrow the book.
-     * @return        Returns true if the operation is successful and false otherwise.
+     * @return Returns true if the operation is successful and false otherwise.
      */
     public boolean lendBook(Book book, Student student) {
         if (!this.books.contains(book)) {
@@ -73,7 +76,7 @@ public class Library {
      *
      * @param searchByType Specifies the field used for searching (id, name).
      * @param keys         The list of keys to search for.
-     * @return             The list of students that match the search criteria. Returns null if search type is title or author.
+     * @return The list of students that match the search criteria. Returns null if search type is title or author.
      */
     public ArrayList<Student> searchStudents(SearchByType searchByType, ArrayList<Object> keys) {
         // TODO complete function
@@ -111,7 +114,7 @@ public class Library {
      *
      * @param searchByType Specifies the field used for searching (id, title, or author).
      * @param keys         The list of keys to search for.
-     * @return             The list of books that match the search criteria. Returns null if search type is name.
+     * @return The list of books that match the search criteria. Returns null if search type is name.
      */
     public ArrayList<Book> searchBooks(SearchByType searchByType, ArrayList<Object> keys) {
         ArrayList<Book> result = new ArrayList<>();
