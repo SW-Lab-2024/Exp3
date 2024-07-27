@@ -1,7 +1,6 @@
 package main.classes;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books;
@@ -20,19 +19,36 @@ public class Library {
         students.add(student);
     }
 
+    public boolean hasBook(Book book) {
+        return this.books.contains(book);
+    }
+
+    public boolean hasStudent(Student student) {
+        return this.students.contains(student);
+    }
+
     /**
      * Lends a book to a student. Removes the book from the library and adds it to the student's list.
      * This operation fails if the library doesn't have the student or the book or the student already has the book.
      *
      * @param book    The book to be lent.
      * @param student The student who is going to borrow the book.
-     * @return        Returns true if the operation is successful and false otherwise.
+     * @return Returns true if the operation is successful and false otherwise.
      */
     public boolean lendBook(Book book, Student student) {
-        if (!this.books.contains(book)) {
+        if (!this.hasBook(book)) {
             System.out.println("!! Book " + book.getTitle() + " not registered.");
             return false;
         }
+
+        /*
+         * We should check that the student is registered to the library or not.
+         */
+        if (!this.hasStudent(student)) {
+            System.out.println("!! Student " + student.getName() + " not registered.");
+            return false;
+        }
+
         if (student.hasBook(book)) {
             System.out.println("!! Student already has the book.");
             return false;
@@ -53,18 +69,23 @@ public class Library {
      * @return Returns true if the operation is successful and false otherwise.
      */
     public boolean returnBook(Book book, Student student) {
-        if (!this.students.contains(student)) {
+        if (!this.hasStudent(student)) {
             System.out.println("!! Student " + student.getName() + " not registered.");
             return false;
         }
-        if (student.hasBook(book)) {
-            this.books.add(book);
-            System.out.println(student.getName() + " returned " + book.getTitle() + ".");
-            return true;
+
+        if (!student.hasBook(book)) {
+            System.out.println("!! " + student.getName() + " doesn't have the book.");
+            return false;
         }
 
-        System.out.println("!! " + student.getName() + " doesn't have the book.");
-        return false;
+        /*
+         * We should remove the book from the student's list.
+         */
+        student.removeBook(book);
+        this.books.add(book);
+        System.out.println(student.getName() + " returned " + book.getTitle() + ".");
+        return true;
     }
 
     /**
@@ -73,7 +94,7 @@ public class Library {
      *
      * @param searchByType Specifies the field used for searching (id, name).
      * @param keys         The list of keys to search for.
-     * @return             The list of students that match the search criteria. Returns null if search type is title or author.
+     * @return The list of students that match the search criteria. Returns null if search type is title or author.
      */
     public ArrayList<Student> searchStudents(SearchByType searchByType, ArrayList<Object> keys) {
         // TODO complete function
@@ -111,7 +132,7 @@ public class Library {
      *
      * @param searchByType Specifies the field used for searching (id, title, or author).
      * @param keys         The list of keys to search for.
-     * @return             The list of books that match the search criteria. Returns null if search type is name.
+     * @return The list of books that match the search criteria. Returns null if search type is name.
      */
     public ArrayList<Book> searchBooks(SearchByType searchByType, ArrayList<Object> keys) {
         ArrayList<Book> result = new ArrayList<>();
