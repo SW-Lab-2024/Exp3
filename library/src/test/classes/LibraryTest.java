@@ -180,7 +180,6 @@ public class LibraryTest {
     @Test
     @DisplayName("searchStudents must return null when no student is found")
     public void searchStudentsNoStudentFound() {
-        Library library = new Library();
         ArrayList<Object> keys = new ArrayList<>(List.of(1));
         Assertions.assertNull(library.searchStudents(SearchByType.ID, keys));
     }
