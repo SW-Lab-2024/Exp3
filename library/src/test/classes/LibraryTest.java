@@ -121,11 +121,10 @@ public class LibraryTest {
      * Begin of searchBooks test block
      */
 
-    private Book assertIsAnythingReturned(SearchByType searchByType, ArrayList<Object> keys) {
-        ArrayList<Book> result = library.searchBooks(searchByType, keys);
+    private <T> T assertIsAnythingReturned(ArrayList<T> result) {
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
-        return result.get(0);
+        return result.getFirst();
     }
 
     private ArrayList<Object> createKeys(Object... keys) {
@@ -147,19 +146,22 @@ public class LibraryTest {
     @Test
     @DisplayName("Return some books when search matches with type of id")
     public void searchBooksSearchById() {
-        Assertions.assertEquals(1, assertIsAnythingReturned(SearchByType.ID, createKeys(1)).getId());
+        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.ID, createKeys(1)));
+        Assertions.assertEquals(1, foundBook.getId());
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of author")
     public void searchBooksSearchByAuthor() {
-        Assertions.assertEquals("Author-1", assertIsAnythingReturned(SearchByType.AUTHOR, createKeys("Author-1")).getAuthor());
+        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.AUTHOR, createKeys("Author-1")));
+        Assertions.assertEquals("Author-1", foundBook.getAuthor());
     }
 
     @Test
     @DisplayName("Return some books when search matches with type of title")
     public void searchBooksSearchByTitle() {
-        Assertions.assertEquals("Book-1", assertIsAnythingReturned(SearchByType.TITLE, createKeys("Book-1")).getTitle());
+        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.TITLE, createKeys("Book-1")));
+        Assertions.assertEquals("Book-1", foundBook.getTitle());
     }
 
     @Test
@@ -197,11 +199,8 @@ public class LibraryTest {
     @Test
     @DisplayName("Return some students when search matches with type of id")
     public void searchStudentsSearchById() {
-        ArrayList<Student> result = library.searchStudents(SearchByType.ID, createKeys(1));
-        Assertions.assertNotNull(result);
-        Assertions.assertEquals(1, result.size());
-        Student found_student = result.getFirst();
-        Assertions.assertEquals(1, found_student.getId());
+        Student foundStudent = assertIsAnythingReturned(library.searchStudents(SearchByType.ID, createKeys(1)));
+        Assertions.assertEquals(1, foundStudent.getId());
     }
 
     /*
