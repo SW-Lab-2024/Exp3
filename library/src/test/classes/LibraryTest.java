@@ -192,6 +192,14 @@ public class LibraryTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.TITLE, keys));
     }
 
+    @Test
+    @DisplayName("searchStudents must throw an exception when search is by author")
+    public void searchStudentsByAuthorThrowsException() {
+        Library library = new Library();
+        ArrayList<Object> keys = new ArrayList<>(List.of("Sadi"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.AUTHOR, keys));
+    }
+
     /*
      * End of searchStudent test block
      */
