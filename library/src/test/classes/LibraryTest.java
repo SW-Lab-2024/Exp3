@@ -210,6 +210,12 @@ public class LibraryTest {
         Assertions.assertEquals("Student-1", foundStudent.getName());
     }
 
+    @Test
+    @DisplayName("searchStudent Throw exception when key's type does not match with search type")
+    public void searchStudentsKeyTypeNotMatchSearchType() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.ID, createKeys("student-1", 1)));
+    }
+
     /*
      * End of searchStudent test block
      */
