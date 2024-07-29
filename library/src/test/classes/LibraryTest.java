@@ -180,24 +180,19 @@ public class LibraryTest {
     @Test
     @DisplayName("searchStudents must return null when no student is found")
     public void searchStudentsNoStudentFound() {
-        ArrayList<Object> keys = new ArrayList<>(List.of(1));
-        Assertions.assertNull(library.searchStudents(SearchByType.ID, keys));
+        Assertions.assertNull(library.searchStudents(SearchByType.ID, createKeys(1)));
     }
 
     @Test
     @DisplayName("searchStudents must throw an exception when search is by title")
     public void searchStudentsByTitleThrowsException() {
-        Library library = new Library();
-        ArrayList<Object> keys = new ArrayList<>(List.of("Boostan"));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.TITLE, keys));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.TITLE, createKeys("Boostan")));
     }
 
     @Test
     @DisplayName("searchStudents must throw an exception when search is by author")
     public void searchStudentsByAuthorThrowsException() {
-        Library library = new Library();
-        ArrayList<Object> keys = new ArrayList<>(List.of("Sadi"));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.AUTHOR, keys));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.AUTHOR, createKeys("Boostan")));
     }
 
     /*

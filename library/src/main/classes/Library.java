@@ -98,9 +98,7 @@ public class Library {
      */
     public ArrayList<Student> searchStudents(SearchByType searchByType, ArrayList<Object> keys) {
         switch (searchByType) {
-            case TITLE:
-                throw new IllegalArgumentException();
-            case AUTHOR:
+            case TITLE, AUTHOR:
                 throw new IllegalArgumentException();
         }
         return null;
