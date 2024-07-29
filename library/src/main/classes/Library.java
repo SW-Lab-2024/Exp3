@@ -88,17 +88,19 @@ public class Library {
         return true;
     }
 
-    private boolean studentMatches(Student student, SearchByType searchByType, Object key) {
-        switch (searchByType) {
-            case ID:
-                if (key instanceof Integer) {
-                    return student.getId() == (Integer) key;
-                } else {
-                    throw new IllegalArgumentException();
+    private <T extends Searchable> ArrayList<T> search(ArrayList<T> items, SearchByType searchByType, ArrayList<Object> keys) {
+        ArrayList<T> result = new ArrayList<>();
+
+        for (T item : items) {
+            for (Object key : keys) {
+                if (item.matches(searchByType, key)) {
+                    result.add(item);
+                    break;  // Found a match, no need to check other keys for this item
                 }
-            default:
-                throw new IllegalArgumentException();
+            }
         }
+
+        return result.isEmpty() ? null : result;
     }
 
     /**
@@ -110,42 +112,7 @@ public class Library {
      * @return The list of students that match the search criteria. Returns null if search type is title or author.
      */
     public ArrayList<Student> searchStudents(SearchByType searchByType, ArrayList<Object> keys) {
-        ArrayList<Student> result = new ArrayList<>();
-
-        for (Student student : students) {
-            for (Object key : keys) {
-                if (studentMatches(student, searchByType, key)) {
-                    result.add(student);
-                }
-            }
-        }
-
-        return result.isEmpty() ? null : result;
-    }
-
-    private boolean bookMatches(Book book, SearchByType searchByType, Object key) {
-        switch (searchByType) {
-            case ID:
-                if (key instanceof Integer) {
-                    return book.getId() == (Integer) key;
-                } else {
-                    throw new IllegalArgumentException();
-                }
-            case AUTHOR:
-                if (key instanceof String) {
-                    return book.getAuthor().equals(key);
-                } else {
-                    throw new IllegalArgumentException();
-                }
-            case TITLE:
-                if (key instanceof String) {
-                    return book.getTitle().equals(key);
-                } else {
-                    throw new IllegalArgumentException();
-                }
-            default:
-                throw new IllegalArgumentException();
-        }
+        return search(students, searchByType, keys);
     }
 
     /**
@@ -157,17 +124,7 @@ public class Library {
      * @return The list of books that match the search criteria. Returns null if search type is name.
      */
     public ArrayList<Book> searchBooks(SearchByType searchByType, ArrayList<Object> keys) {
-        ArrayList<Book> result = new ArrayList<>();
-
-        for (Book book : books) {
-            for (Object key : keys) {
-                if (bookMatches(book, searchByType, key)) {
-                    result.add(book);
-                }
-            }
-        }
-
-        return result.isEmpty() ? null : result;
+        return search(books, searchByType, keys);
     }
 
     /**

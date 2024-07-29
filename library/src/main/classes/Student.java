@@ -2,7 +2,7 @@ package main.classes;
 
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Searchable {
     private String name;
     private int id;
     private ArrayList<Book> books;
@@ -44,5 +44,22 @@ public class Student {
     @Override
     public String toString() {
         return name + "|" + id;
+    }
+
+    @Override
+    public boolean matches(SearchByType searchByType, Object key) {
+        switch (searchByType) {
+            case ID:
+                if (key instanceof Integer) {
+                    return this.id == (Integer) key;
+                }
+                break;
+            case NAME:
+                if (key instanceof String) {
+                    return this.name.equals(key);
+                }
+                break;
+        }
+        throw new IllegalArgumentException();
     }
 }
