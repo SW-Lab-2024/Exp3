@@ -100,6 +100,8 @@ public class Library {
         switch (searchByType) {
             case TITLE:
                 throw new IllegalArgumentException();
+            case AUTHOR:
+                throw new IllegalArgumentException();
         }
         return null;
     }
