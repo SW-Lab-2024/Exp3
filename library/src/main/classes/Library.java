@@ -97,11 +97,26 @@ public class Library {
      * @return The list of students that match the search criteria. Returns null if search type is title or author.
      */
     public ArrayList<Student> searchStudents(SearchByType searchByType, ArrayList<Object> keys) {
-        switch (searchByType) {
-            case TITLE, AUTHOR:
-                throw new IllegalArgumentException();
+        ArrayList<Student> result = new ArrayList<>();
+
+        for (Student student : students) {
+            for (Object key : keys) {
+                switch (searchByType) {
+                    case TITLE, AUTHOR:
+                        throw new IllegalArgumentException();
+                    case ID:
+                        if (key instanceof Integer) {
+                            if (student.getId() == (Integer) key) {
+                                result.add(student);
+                            }
+                        } else {
+                            throw new IllegalArgumentException();
+                        }
+                }
+            }
         }
-        return null;
+
+        return result.isEmpty() ? null : result;
     }
 
     private boolean matches(Book book, SearchByType searchByType, Object key) {
