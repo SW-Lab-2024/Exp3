@@ -180,7 +180,7 @@ public class LibraryTest {
     @Test
     @DisplayName("searchStudents must return null when no student is found")
     public void searchStudentsNoStudentFound() {
-        Assertions.assertNull(library.searchStudents(SearchByType.ID, createKeys(1)));
+        Assertions.assertNull(library.searchStudents(SearchByType.ID, createKeys(100)));
     }
 
     @Test
@@ -193,6 +193,21 @@ public class LibraryTest {
     @DisplayName("searchStudents must throw an exception when search is by author")
     public void searchStudentsByAuthorThrowsException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.AUTHOR, createKeys("Boostan")));
+    }
+
+    @Test
+    @DisplayName("Return some students when search matches with type of id")
+    public void searchStudentsSearchById() {
+        Library library = new Library();
+        Student student = new Student("Student-1", 1);
+        library.addStudent(student);
+
+        ArrayList<Student> result = library.searchStudents(SearchByType.ID, createKeys(1));
+
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(1, result.size());
+        Student found_student = result.getFirst();
+        Assertions.assertEquals(1, found_student.getId());
     }
 
     /*
