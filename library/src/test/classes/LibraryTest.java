@@ -203,6 +203,13 @@ public class LibraryTest {
         Assertions.assertEquals(1, foundStudent.getId());
     }
 
+    @Test
+    @DisplayName("Return some students when search matches with type of name")
+    public void searchStudentsSearchByName() {
+        Student foundStudent = assertIsAnythingReturned(library.searchStudents(SearchByType.NAME, createKeys("Student-1")));
+        Assertions.assertEquals("Student-1", foundStudent.getName());
+    }
+
     /*
      * End of searchStudent test block
      */
