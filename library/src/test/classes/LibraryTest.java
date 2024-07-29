@@ -184,6 +184,14 @@ public class LibraryTest {
         Assertions.assertNull(library.searchStudents(SearchByType.ID, keys));
     }
 
+    @Test
+    @DisplayName("searchStudents must throw an exception when search is by title")
+    public void searchStudentsByTitleThrowsException() {
+        Library library = new Library();
+        ArrayList<Object> keys = new ArrayList<>(List.of("Boostan"));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.TITLE, keys));
+    }
+
     /*
      * End of searchStudent test block
      */
