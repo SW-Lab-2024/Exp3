@@ -198,12 +198,7 @@ public class LibraryTest {
     @Test
     @DisplayName("Return some students when search matches with type of id")
     public void searchStudentsSearchById() {
-        Library library = new Library();
-        Student student = new Student("Student-1", 1);
-        library.addStudent(student);
-
         ArrayList<Student> result = library.searchStudents(SearchByType.ID, createKeys(1));
-
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
         Student found_student = result.getFirst();

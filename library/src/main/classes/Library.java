@@ -88,6 +88,19 @@ public class Library {
         return true;
     }
 
+    private boolean studentMatches(Student student, SearchByType searchByType, Object key) {
+        switch (searchByType) {
+            case ID:
+                if (key instanceof Integer) {
+                    return student.getId() == (Integer) key;
+                } else {
+                    throw new IllegalArgumentException();
+                }
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     /**
      * Returns a list of students where the specified field matches any of the keys provided.
      * The specified field is determined by the searchByType argument, which can be id or name (but not title or author).
@@ -101,17 +114,8 @@ public class Library {
 
         for (Student student : students) {
             for (Object key : keys) {
-                switch (searchByType) {
-                    case TITLE, AUTHOR:
-                        throw new IllegalArgumentException();
-                    case ID:
-                        if (key instanceof Integer) {
-                            if (student.getId() == (Integer) key) {
-                                result.add(student);
-                            }
-                        } else {
-                            throw new IllegalArgumentException();
-                        }
+                if (studentMatches(student, searchByType, key)) {
+                    result.add(student);
                 }
             }
         }
@@ -119,7 +123,7 @@ public class Library {
         return result.isEmpty() ? null : result;
     }
 
-    private boolean matches(Book book, SearchByType searchByType, Object key) {
+    private boolean bookMatches(Book book, SearchByType searchByType, Object key) {
         switch (searchByType) {
             case ID:
                 if (key instanceof Integer) {
@@ -157,7 +161,7 @@ public class Library {
 
         for (Book book : books) {
             for (Object key : keys) {
-                if (matches(book, searchByType, key)) {
+                if (bookMatches(book, searchByType, key)) {
                     result.add(book);
                 }
             }
