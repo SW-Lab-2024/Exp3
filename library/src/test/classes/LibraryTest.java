@@ -135,8 +135,7 @@ public class LibraryTest {
     @Test
     @DisplayName("searchBooks must return null when no book is found")
     public void searchBooksNoBookFound() {
-        ArrayList<Object> keys = createKeys(100);
-        Assertions.assertNull(library.searchBooks(SearchByType.ID, keys));
+        Assertions.assertNull(library.searchBooks(SearchByType.ID, createKeys(100)));
     }
 
     @Test
