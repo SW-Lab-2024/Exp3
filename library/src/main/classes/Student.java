@@ -54,11 +54,6 @@ public class Student implements Searchable {
                     return this.id == (Integer) key;
                 }
                 break;
-            case NAME:
-                if (key instanceof String) {
-                    return this.name.equals(key);
-                }
-                break;
         }
         throw new IllegalArgumentException();
     }
