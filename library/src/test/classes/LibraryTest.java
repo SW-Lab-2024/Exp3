@@ -30,6 +30,13 @@ public class LibraryTest {
         Assertions.assertTrue(library.hasBook(newBook));
     }
 
+    @Test
+    @DisplayName("Test adding a student to the library")
+    public void testAddStudent() {
+        Student newStudent = new Student("Student-2", 2);
+        library.addStudent(newStudent);
+        Assertions.assertTrue(library.hasStudent(newStudent));
+    }
 
     /*
      * Begin of lendBook test block
