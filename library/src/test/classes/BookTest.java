@@ -33,4 +33,12 @@ public class BookTest {
         Assertions.assertTrue(book.matches(SearchByType.ID, 1));
         Assertions.assertFalse(book.matches(SearchByType.ID, 2));
     }
+
+    @Test
+    @DisplayName("Test matches method with Title")
+    public void testMatchesWithTitle() {
+        Book book = new Book("Title", "Author", 1);
+        Assertions.assertTrue(book.matches(SearchByType.TITLE, "Title"));
+        Assertions.assertFalse(book.matches(SearchByType.TITLE, "Other"));
+    }
 }
