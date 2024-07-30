@@ -47,4 +47,10 @@ public class BookTest {
         Assertions.assertTrue(book.matches(SearchByType.AUTHOR, "Author"));
         Assertions.assertFalse(book.matches(SearchByType.AUTHOR, "Other"));
     }
+
+    @Test
+    @DisplayName("Test matches method with invalid key type")
+    public void testMatchesWithInvalidKeyType() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> book.matches(SearchByType.ID, "invalid"));
+    }
 }
