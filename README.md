@@ -102,7 +102,7 @@ Searchable را پیاده‌سازی می‌کردند استفاده می‌ک
 - برای به دست آوردن اعداد پوشش آزمون، بر روی پکیج java در مسیر test کلیک راست کرده و گزینه Coverage with Tests All Run
   را انتخاب کنید.
 
-  ![library_test_coverage_i.png](..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2Flibrary_test_coverage_i.png)
+  ![library_test_coverage_i](https://github.com/user-attachments/assets/f2ecc9ac-f95e-4736-988c-c741e6e0f1dd)
   همانطور که مشاهده می‌کنید پروژه از پوشش خوبی برخوردار است اما در فاز بعدی سعی می‌کنیم این پوشش را حداکثری کنیم.
 
 **4. افزودن بخش‌هایی به کد تست برای بهبود اعداد پوشش آزمون:**
@@ -112,7 +112,9 @@ Searchable را پیاده‌سازی می‌کردند استفاده می‌ک
 
 با افزودن تست های بیشتر برای همه کلاس‌ها و البته پوشاندن تقریبا‌ همه‌جای پروژه از انواع تست و سپس بازآرایی های لازم به
 منظور جداسازی تست‌های کلاس Student و Book از Library و نهایتا اعمال AAA (Arrange-Act-Assert) به کاورج زیر رسیدیم:
-![library_test_coverage_ii.png](..%2F..%2F..%2F..%2F..%2F..%2FPictures%2FScreenshots%2Flibrary_test_coverage_ii.png)
+
+  ![library_test_coverage_ii](https://github.com/user-attachments/assets/91ed7be4-7ee8-461a-95ac-2c82cc20d74c)
+
 
 پایان!
 
