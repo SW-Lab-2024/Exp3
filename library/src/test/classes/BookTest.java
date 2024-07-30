@@ -14,4 +14,11 @@ public class BookTest {
         Assertions.assertEquals("Author", book.getAuthor());
         Assertions.assertEquals(1, book.getId());
     }
+
+    @Test
+    @DisplayName("Test Book toString method")
+    public void testToString() {
+        Book book = new Book("Title", "Author", 1);
+        Assertions.assertEquals("Title by Author", book.toString());
+    }
 }
