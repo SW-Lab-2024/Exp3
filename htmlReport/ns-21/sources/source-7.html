@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > NodeTestTask</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.platform.engine.support.hierarchical</a>
+</div>
+
+<h1>Coverage Summary for Class: NodeTestTask (org.junit.platform.engine.support.hierarchical)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">NodeTestTask</td>
+<td class="coverageStat">
+  <span class="percent">
+    70%
+  </span>
+  <span class="absValue">
+    (14/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (10/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75.4%
+  </span>
+  <span class="absValue">
+    (49/65)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">NodeTestTask$DefaultDynamicTestExecutor</td>
+<td class="coverageStat">
+  <span class="percent">
+    40%
+  </span>
+  <span class="absValue">
+    (2/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (1/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    12%
+  </span>
+  <span class="absValue">
+    (3/25)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    64%
+  </span>
+  <span class="absValue">
+    (16/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    45.8%
+  </span>
+  <span class="absValue">
+    (11/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.8%
+  </span>
+  <span class="absValue">
+    (52/90)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.platform.engine.support.hierarchical;
+&nbsp;
+&nbsp;class NodeTestTask &lt;C extends org.junit.platform.engine.support.hierarchical.EngineExecutionContext&gt; implements org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutorService.TestTask {
+&nbsp;    private static final org.junit.platform.commons.logging.Logger logger;
+&nbsp;    private static final java.lang.Runnable NOOP;
+&nbsp;    private final org.junit.platform.engine.support.hierarchical.NodeTestTaskContext taskContext;
+&nbsp;    private final org.junit.platform.engine.TestDescriptor testDescriptor;
+&nbsp;    private final org.junit.platform.engine.support.hierarchical.Node&lt;C&gt; node;
+&nbsp;    private final java.lang.Runnable finalizer;
+&nbsp;    private C parentContext;
+&nbsp;    private C context;
+&nbsp;    private org.junit.platform.engine.support.hierarchical.Node.SkipResult skipResult;
+&nbsp;    private boolean started;
+&nbsp;    private org.junit.platform.engine.support.hierarchical.ThrowableCollector throwableCollector;
+&nbsp;
+&nbsp;    NodeTestTask(org.junit.platform.engine.support.hierarchical.NodeTestTaskContext taskContext, org.junit.platform.engine.TestDescriptor testDescriptor) { /* compiled code */ }
+&nbsp;
+&nbsp;    NodeTestTask(org.junit.platform.engine.support.hierarchical.NodeTestTaskContext taskContext, org.junit.platform.engine.TestDescriptor testDescriptor, java.lang.Runnable finalizer) { /* compiled code */ }
+&nbsp;
+&nbsp;    public org.junit.platform.engine.support.hierarchical.ResourceLock getResourceLock() { /* compiled code */ }
+&nbsp;
+&nbsp;    public org.junit.platform.engine.support.hierarchical.Node.ExecutionMode getExecutionMode() { /* compiled code */ }
+&nbsp;
+&nbsp;    void setParentContext(C parentContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void execute() { /* compiled code */ }
+&nbsp;
+&nbsp;    private void prepare() { /* compiled code */ }
+&nbsp;
+&nbsp;    private void checkWhetherSkipped() { /* compiled code */ }
+&nbsp;
+&nbsp;    private void executeRecursively() { /* compiled code */ }
+&nbsp;
+&nbsp;    private void cleanUp() { /* compiled code */ }
+&nbsp;
+&nbsp;    private void reportCompletion() { /* compiled code */ }
+&nbsp;
+&nbsp;    private class DefaultDynamicTestExecutor implements org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor {
+<b class="nc">&nbsp;        private final java.util.Map&lt;org.junit.platform.engine.UniqueId,org.junit.platform.engine.support.hierarchical.NodeTestTask.DynamicTaskState&gt; unfinishedTasks;</b>
+&nbsp;
+<b class="fc">&nbsp;        private DefaultDynamicTestExecutor() { /* compiled code */ }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        public void execute(org.junit.platform.engine.TestDescriptor testDescriptor) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;        public java.util.concurrent.Future&lt;?&gt; execute(org.junit.platform.engine.TestDescriptor testDescriptor, org.junit.platform.engine.EngineExecutionListener executionListener) { /* compiled code */ }
+&nbsp;
+&nbsp;        public void awaitFinished() throws java.lang.InterruptedException { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    @java.lang.FunctionalInterface
+&nbsp;    private static interface DynamicTaskState {
+&nbsp;        org.junit.platform.engine.support.hierarchical.NodeTestTask.DynamicTaskState UNSCHEDULED;
+&nbsp;
+&nbsp;        static org.junit.platform.engine.support.hierarchical.NodeTestTask.DynamicTaskState unscheduled() { /* compiled code */ }
+&nbsp;
+&nbsp;        static org.junit.platform.engine.support.hierarchical.NodeTestTask.DynamicTaskState scheduled(java.util.concurrent.Future&lt;java.lang.Void&gt; future) { /* compiled code */ }
+&nbsp;
+<b class="fc">&nbsp;        void awaitFinished() throws java.util.concurrent.CancellationException, java.util.concurrent.ExecutionException, java.lang.InterruptedException;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

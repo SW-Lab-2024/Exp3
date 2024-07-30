@@ -1,0 +1,284 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ExtensionContext</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.api.extension</a>
+</div>
+
+<h1>Coverage Summary for Class: ExtensionContext (org.junit.jupiter.api.extension)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExtensionContext</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (3/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (3/6)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ExtensionContext$Namespace</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16.7%
+  </span>
+  <span class="absValue">
+    (1/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.4%
+  </span>
+  <span class="absValue">
+    (9/19)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ExtensionContext$Store</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ExtensionContext$Store$CloseableResource</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (8/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    12.5%
+  </span>
+  <span class="absValue">
+    (1/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    42.9%
+  </span>
+  <span class="absValue">
+    (12/28)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.api.extension;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.0&quot;)
+&nbsp;public interface ExtensionContext {
+&nbsp;    java.util.Optional&lt;org.junit.jupiter.api.extension.ExtensionContext&gt; getParent();
+&nbsp;
+&nbsp;    org.junit.jupiter.api.extension.ExtensionContext getRoot();
+&nbsp;
+&nbsp;    java.lang.String getUniqueId();
+&nbsp;
+&nbsp;    java.lang.String getDisplayName();
+&nbsp;
+&nbsp;    java.util.Set&lt;java.lang.String&gt; getTags();
+&nbsp;
+&nbsp;    java.util.Optional&lt;java.lang.reflect.AnnotatedElement&gt; getElement();
+&nbsp;
+&nbsp;    java.util.Optional&lt;java.lang.Class&lt;?&gt;&gt; getTestClass();
+&nbsp;
+&nbsp;    default java.lang.Class&lt;?&gt; getRequiredTestClass() { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.1&quot;)
+&nbsp;    java.util.Optional&lt;org.junit.jupiter.api.TestInstance.Lifecycle&gt; getTestInstanceLifecycle();
+&nbsp;
+&nbsp;    java.util.Optional&lt;java.lang.Object&gt; getTestInstance();
+&nbsp;
+&nbsp;    default java.lang.Object getRequiredTestInstance() { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.7&quot;)
+&nbsp;    java.util.Optional&lt;org.junit.jupiter.api.extension.TestInstances&gt; getTestInstances();
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.7&quot;)
+&nbsp;    default org.junit.jupiter.api.extension.TestInstances getRequiredTestInstances() { /* compiled code */ }
+&nbsp;
+&nbsp;    java.util.Optional&lt;java.lang.reflect.Method&gt; getTestMethod();
+&nbsp;
+&nbsp;    default java.lang.reflect.Method getRequiredTestMethod() { /* compiled code */ }
+&nbsp;
+&nbsp;    java.util.Optional&lt;java.lang.Throwable&gt; getExecutionException();
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.1&quot;)
+&nbsp;    java.util.Optional&lt;java.lang.String&gt; getConfigurationParameter(java.lang.String s);
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.7&quot;)
+&nbsp;    &lt;T&gt; java.util.Optional&lt;T&gt; getConfigurationParameter(java.lang.String s, java.util.function.Function&lt;java.lang.String,T&gt; function);
+&nbsp;
+&nbsp;    void publishReportEntry(java.util.Map&lt;java.lang.String,java.lang.String&gt; map);
+&nbsp;
+&nbsp;    default void publishReportEntry(java.lang.String key, java.lang.String value) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.3&quot;)
+&nbsp;    default void publishReportEntry(java.lang.String value) { /* compiled code */ }
+&nbsp;
+&nbsp;    org.junit.jupiter.api.extension.ExtensionContext.Store getStore(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace);
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.8.1&quot;)
+&nbsp;    org.junit.jupiter.api.parallel.ExecutionMode getExecutionMode();
+&nbsp;
+&nbsp;    static class Namespace {
+&nbsp;        public static final org.junit.jupiter.api.extension.ExtensionContext.Namespace GLOBAL;
+&nbsp;        private final java.util.List&lt;java.lang.Object&gt; parts;
+&nbsp;
+&nbsp;        public static org.junit.jupiter.api.extension.ExtensionContext.Namespace create(java.lang.Object... parts) { /* compiled code */ }
+&nbsp;
+&nbsp;        private Namespace(java.util.List&lt;java.lang.Object&gt; parts) { /* compiled code */ }
+&nbsp;
+&nbsp;        public boolean equals(java.lang.Object o) { /* compiled code */ }
+&nbsp;
+&nbsp;        public int hashCode() { /* compiled code */ }
+&nbsp;
+&nbsp;        @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.8&quot;)
+&nbsp;        public org.junit.jupiter.api.extension.ExtensionContext.Namespace append(java.lang.Object... parts) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    static interface Store {
+&nbsp;        java.lang.Object get(java.lang.Object o);
+&nbsp;
+&nbsp;        &lt;V&gt; V get(java.lang.Object o, java.lang.Class&lt;V&gt; aClass);
+&nbsp;
+&nbsp;        @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.5&quot;)
+&nbsp;        default &lt;V&gt; V getOrDefault(java.lang.Object key, java.lang.Class&lt;V&gt; requiredType, V defaultValue) { /* compiled code */ }
+&nbsp;
+&nbsp;        @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.1&quot;)
+&nbsp;        default &lt;V&gt; V getOrComputeIfAbsent(java.lang.Class&lt;V&gt; type) { /* compiled code */ }
+&nbsp;
+&nbsp;        &lt;K, V&gt; java.lang.Object getOrComputeIfAbsent(K k, java.util.function.Function&lt;K,V&gt; function);
+&nbsp;
+&nbsp;        &lt;K, V&gt; V getOrComputeIfAbsent(K k, java.util.function.Function&lt;K,V&gt; function, java.lang.Class&lt;V&gt; aClass);
+&nbsp;
+&nbsp;        void put(java.lang.Object o, java.lang.Object o1);
+&nbsp;
+&nbsp;        java.lang.Object remove(java.lang.Object o);
+&nbsp;
+&nbsp;        &lt;V&gt; V remove(java.lang.Object o, java.lang.Class&lt;V&gt; aClass);
+&nbsp;
+&nbsp;        @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.1&quot;)
+&nbsp;        static interface CloseableResource {
+&nbsp;            void close() throws java.lang.Throwable;
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

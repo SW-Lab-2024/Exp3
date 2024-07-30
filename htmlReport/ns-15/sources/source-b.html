@@ -1,0 +1,206 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > TimeoutExtension</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.engine.extension</a>
+</div>
+
+<h1>Coverage Summary for Class: TimeoutExtension (org.junit.jupiter.engine.extension)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TimeoutExtension</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.7%
+  </span>
+  <span class="absValue">
+    (15/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    15.4%
+  </span>
+  <span class="absValue">
+    (2/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.6%
+  </span>
+  <span class="absValue">
+    (20/42)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TimeoutExtension$TimeoutProvider</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    57.7%
+  </span>
+  <span class="absValue">
+    (15/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    15.4%
+  </span>
+  <span class="absValue">
+    (2/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.6%
+  </span>
+  <span class="absValue">
+    (20/42)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.engine.extension;
+&nbsp;
+&nbsp;class TimeoutExtension implements org.junit.jupiter.api.extension.BeforeAllCallback, org.junit.jupiter.api.extension.BeforeEachCallback, org.junit.jupiter.api.extension.InvocationInterceptor {
+&nbsp;    private static final org.junit.jupiter.api.extension.ExtensionContext.Namespace NAMESPACE;
+&nbsp;    private static final java.lang.String TESTABLE_METHOD_TIMEOUT_KEY = &quot;testable_method_timeout_from_annotation&quot;;
+&nbsp;    private static final java.lang.String GLOBAL_TIMEOUT_CONFIG_KEY = &quot;global_timeout_config&quot;;
+&nbsp;    private static final java.lang.String ENABLED_MODE_VALUE = &quot;enabled&quot;;
+&nbsp;    private static final java.lang.String DISABLED_MODE_VALUE = &quot;disabled&quot;;
+&nbsp;    private static final java.lang.String DISABLED_ON_DEBUG_MODE_VALUE = &quot;disabled_on_debug&quot;;
+&nbsp;
+&nbsp;    TimeoutExtension() { /* compiled code */ }
+&nbsp;
+&nbsp;    public void beforeAll(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void beforeEach(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void readAndStoreTimeoutSoChildrenInheritIt(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptBeforeAllMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptBeforeEachMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptTestMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptTestTemplateMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public &lt;T&gt; T interceptTestFactoryMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptAfterEachMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    public void interceptAfterAllMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    private void interceptLifecycleMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext, org.junit.jupiter.engine.extension.TimeoutExtension.TimeoutProvider defaultTimeoutProvider) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.Optional&lt;org.junit.jupiter.engine.extension.TimeoutDuration&gt; readTimeoutFromAnnotation(java.util.Optional&lt;java.lang.reflect.AnnotatedElement&gt; element) { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+&nbsp;    private &lt;T&gt; T interceptTestableMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext, org.junit.jupiter.engine.extension.TimeoutExtension.TimeoutProvider defaultTimeoutProvider) throws java.lang.Throwable { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+&nbsp;    private &lt;T&gt; T intercept(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext, org.junit.jupiter.engine.extension.TimeoutDuration explicitTimeout, org.junit.jupiter.engine.extension.TimeoutExtension.TimeoutProvider defaultTimeoutProvider) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.jupiter.engine.extension.TimeoutDuration getDefaultTimeout(org.junit.jupiter.api.extension.ExtensionContext extensionContext, org.junit.jupiter.engine.extension.TimeoutExtension.TimeoutProvider defaultTimeoutProvider) { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.jupiter.engine.extension.TimeoutConfiguration getGlobalTimeoutConfiguration(org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    private &lt;T&gt; org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; decorate(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext, org.junit.jupiter.engine.extension.TimeoutDuration timeout) { /* compiled code */ }
+&nbsp;
+<b class="fc">&nbsp;    private java.lang.String describe(org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;    private java.util.concurrent.ScheduledExecutorService getExecutor(org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    private boolean isTimeoutDisabled(org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+&nbsp;    private boolean isTimeoutDisabled(java.lang.String mode) { /* compiled code */ }
+&nbsp;
+&nbsp;    @java.lang.FunctionalInterface
+<b class="fc">&nbsp;    private static interface TimeoutProvider extends java.util.function.Function&lt;org.junit.jupiter.engine.extension.TimeoutConfiguration,java.util.Optional&lt;org.junit.jupiter.engine.extension.TimeoutDuration&gt;&gt; {</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    private static class ExecutorResource implements org.junit.jupiter.api.extension.ExtensionContext.Store.CloseableResource {
+&nbsp;        private final java.util.concurrent.ScheduledExecutorService executor;
+&nbsp;
+&nbsp;        ExecutorResource() { /* compiled code */ }
+&nbsp;
+<b class="nc">&nbsp;        java.util.concurrent.ScheduledExecutorService get() { /* compiled code */ }</b>
+&nbsp;
+&nbsp;        public void close() throws java.lang.Throwable { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

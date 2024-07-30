@@ -1,0 +1,172 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > InvocationInterceptor</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.api.extension</a>
+</div>
+
+<h1>Coverage Summary for Class: InvocationInterceptor (org.junit.jupiter.api.extension)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InvocationInterceptor</td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">InvocationInterceptor$Invocation</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    9.1%
+  </span>
+  <span class="absValue">
+    (1/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    9.1%
+  </span>
+  <span class="absValue">
+    (1/11)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.api.extension;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.5&quot;)
+&nbsp;public interface InvocationInterceptor extends org.junit.jupiter.api.extension.Extension {
+&nbsp;    default &lt;T&gt; T interceptTestClassConstructor(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Constructor&lt;T&gt;&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptBeforeAllMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptBeforeEachMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptTestMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default &lt;T&gt; T interceptTestFactoryMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;T&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptTestTemplateMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @deprecated
+&nbsp;     */
+&nbsp;    @java.lang.Deprecated
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.DEPRECATED, since = &quot;5.8&quot;)
+&nbsp;    default void interceptDynamicTest(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.8&quot;)
+&nbsp;    default void interceptDynamicTest(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.DynamicTestInvocationContext invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptAfterEachMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    default void interceptAfterAllMethod(org.junit.jupiter.api.extension.InvocationInterceptor.Invocation&lt;java.lang.Void&gt; invocation, org.junit.jupiter.api.extension.ReflectiveInvocationContext&lt;java.lang.reflect.Method&gt; invocationContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.5&quot;)
+&nbsp;    static interface Invocation &lt;T&gt; {
+&nbsp;        T proceed() throws java.lang.Throwable;
+&nbsp;
+&nbsp;        @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.6&quot;)
+&nbsp;        default void skip() { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

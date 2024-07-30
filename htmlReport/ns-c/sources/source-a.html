@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > MethodOrderer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.api</a>
+</div>
+
+<h1>Coverage Summary for Class: MethodOrderer (org.junit.jupiter.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MethodOrderer</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.api;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.STABLE, since = &quot;5.7&quot;)
+&nbsp;public interface MethodOrderer {
+&nbsp;    void orderMethods(org.junit.jupiter.api.MethodOrdererContext methodOrdererContext);
+&nbsp;
+&nbsp;    default java.util.Optional&lt;org.junit.jupiter.api.parallel.ExecutionMode&gt; getDefaultExecutionMode() { /* compiled code */ }
+&nbsp;
+&nbsp;    static class Random implements org.junit.jupiter.api.MethodOrderer {
+&nbsp;        private static final org.junit.platform.commons.logging.Logger logger;
+&nbsp;        private static final long DEFAULT_SEED;
+&nbsp;        public static final java.lang.String RANDOM_SEED_PROPERTY_NAME = &quot;junit.jupiter.execution.order.random.seed&quot;;
+&nbsp;
+&nbsp;        public Random() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderMethods(org.junit.jupiter.api.MethodOrdererContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.util.Optional&lt;java.lang.Long&gt; getCustomSeed(org.junit.jupiter.api.MethodOrdererContext context) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    static class OrderAnnotation implements org.junit.jupiter.api.MethodOrderer {
+&nbsp;        public OrderAnnotation() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderMethods(org.junit.jupiter.api.MethodOrdererContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;        private static int getOrder(org.junit.jupiter.api.MethodDescriptor descriptor) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.7&quot;)
+&nbsp;    static class DisplayName implements org.junit.jupiter.api.MethodOrderer {
+&nbsp;        private static final java.util.Comparator&lt;org.junit.jupiter.api.MethodDescriptor&gt; comparator;
+&nbsp;
+&nbsp;        public DisplayName() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderMethods(org.junit.jupiter.api.MethodOrdererContext context) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.7&quot;)
+&nbsp;    static class MethodName implements org.junit.jupiter.api.MethodOrderer {
+&nbsp;        private static final java.util.Comparator&lt;org.junit.jupiter.api.MethodDescriptor&gt; comparator;
+&nbsp;
+&nbsp;        public MethodName() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderMethods(org.junit.jupiter.api.MethodOrdererContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;        private static java.lang.String parameterList(java.lang.reflect.Method method) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @deprecated
+&nbsp;     */
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.DEPRECATED, since = &quot;5.7&quot;)
+&nbsp;    @java.lang.Deprecated
+&nbsp;    static class Alphanumeric extends org.junit.jupiter.api.MethodOrderer.MethodName {
+&nbsp;        public Alphanumeric() { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

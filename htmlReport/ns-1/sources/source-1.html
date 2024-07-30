@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > Book</title>
+  <title>Coverage Report > Main</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,22 +19,21 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">classes</a>
+    <a href="../index.html">&lt;empty package name&gt;</a>
 </div>
 
-<h1>Coverage Summary for Class: Book (classes)</h1>
+<h1>Coverage Summary for Class: Main (&lt;empty package name&gt;)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
 <th class="coverageStat 
 ">
-  Method, %
+  Class, %
 </th>
 <th class="coverageStat 
 ">
-  Branch, %
+  Method, %
 </th>
 <th class="coverageStat 
 ">
@@ -42,78 +41,33 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Book</td>
+  <td class="name">Main</td>
 <td class="coverageStat">
   <span class="percent">
-    83.3%
+    0%
   </span>
   <span class="absValue">
-    (5/6)
+    (0/1)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    81.8%
+    0%
   </span>
   <span class="absValue">
-    (9/11)
+    (0/3)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    93.8%
+    0%
   </span>
   <span class="absValue">
-    (15/16)
-  </span>
-</td>
-</tr>
-  <tr>
-    <td class="name">Book$1</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    100%
-  </span>
-  <span class="absValue">
-    (1/1)
-  </span>
-</td>
-  </tr>
-<tr>
-  <td class="name"><strong>Total</strong></td>
-<td class="coverageStat">
-  <span class="percent">
-    85.7%
-  </span>
-  <span class="absValue">
-    (6/7)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    81.8%
-  </span>
-  <span class="absValue">
-    (9/11)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    94.1%
-  </span>
-  <span class="absValue">
-    (16/17)
+    (0/27)
   </span>
 </td>
 </tr>
+
 </table>
 
 <br/>
@@ -121,57 +75,55 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package classes;
+<code class="sourceCode" id="sourceCode">&nbsp;import classes.Book;
+&nbsp;import classes.Library;
+&nbsp;import classes.SearchByType;
+&nbsp;import classes.Student;
 &nbsp;
-&nbsp;public class Book implements Searchable {
-&nbsp;    private int id;
-&nbsp;    private String title;
-&nbsp;    private String author;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Arrays;
 &nbsp;
-<b class="fc">&nbsp;    public Book(String title, String author, int id) {</b>
-<b class="fc">&nbsp;        this.id = id;</b>
-<b class="fc">&nbsp;        this.title = title;</b>
-<b class="fc">&nbsp;        this.author = author;</b>
+&nbsp;
+<b class="nc">&nbsp;public class Main {</b>
+&nbsp;    public static void main(String[] args) {
+<b class="nc">&nbsp;        runExample();</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public String getTitle() {
-<b class="fc">&nbsp;        return title;</b>
-&nbsp;    }
+&nbsp;    static void runExample() {
+<b class="nc">&nbsp;        Library library = new Library();</b>
 &nbsp;
-&nbsp;    public String getAuthor() {
-<b class="fc">&nbsp;        return author;</b>
-&nbsp;    }
+<b class="nc">&nbsp;        Book book1 = new Book(&quot;Book-1&quot;, &quot;Author-1&quot;, 10);</b>
+<b class="nc">&nbsp;        Book book2 = new Book(&quot;Book-2&quot;, &quot;Author-2&quot;, 11);</b>
+<b class="nc">&nbsp;        Book book3 = new Book(&quot;Book-3&quot;, &quot;Author-3&quot;, 12);</b>
+<b class="nc">&nbsp;        Book book4 = new Book(&quot;Book-4&quot;, &quot;Author-1&quot;, 13);</b>
+<b class="nc">&nbsp;        Book book5 = new Book(&quot;Not-owned-book&quot;, &quot;Author-1&quot;, 15);</b>
 &nbsp;
-&nbsp;    public int getId() {
-<b class="fc">&nbsp;        return id;</b>
-&nbsp;    }
+<b class="nc">&nbsp;        Student student1 = new Student(&quot;Alice&quot;, 10);</b>
+<b class="nc">&nbsp;        Student student2 = new Student(&quot;Bob&quot;, 11);</b>
+<b class="nc">&nbsp;        Student student3 = new Student(&quot;John&quot;, 12);</b>
+<b class="nc">&nbsp;        Student student4 = new Student(&quot;Not-registered-student&quot;, 13);</b>
 &nbsp;
-&nbsp;    @Override
-&nbsp;    public String toString() {
-<b class="nc">&nbsp;        return title + &quot; by &quot; + author;</b>
-&nbsp;    }
+<b class="nc">&nbsp;        library.addBook(book1);</b>
+<b class="nc">&nbsp;        library.addBook(book2);</b>
+<b class="nc">&nbsp;        library.addBook(book3);</b>
+<b class="nc">&nbsp;        library.addBook(book4);</b>
+&nbsp;
+<b class="nc">&nbsp;        library.addStudent(student1);</b>
+<b class="nc">&nbsp;        library.addStudent(student2);</b>
+<b class="nc">&nbsp;        library.addStudent(student3);</b>
 &nbsp;
 &nbsp;
-&nbsp;    @Override
-&nbsp;    public boolean matches(SearchByType searchByType, Object key) {
-<b class="fc">&nbsp;        switch (searchByType) {</b>
-&nbsp;            case ID:
-<b class="fc">&nbsp;                if (key instanceof Integer) {</b>
-<b class="fc">&nbsp;                    return this.id == (Integer) key;</b>
-&nbsp;                }
-&nbsp;                break;
-&nbsp;            case TITLE:
-<b class="pc">&nbsp;                if (key instanceof String) {</b>
-<b class="fc">&nbsp;                    return this.title.equals(key);</b>
-&nbsp;                }
-&nbsp;                break;
-&nbsp;            case AUTHOR:
-<b class="pc">&nbsp;                if (key instanceof String) {</b>
-<b class="fc">&nbsp;                    return this.author.equals(key);</b>
-&nbsp;                }
-&nbsp;                break;
-&nbsp;        }
-<b class="fc">&nbsp;        throw new IllegalArgumentException();</b>
+<b class="nc">&nbsp;        library.lendBook(book1, student1);</b>
+<b class="nc">&nbsp;        library.lendBook(book2, student3);</b>
+<b class="nc">&nbsp;        library.returnBook(book2, student3);</b>
+<b class="nc">&nbsp;        library.lendBook(book4, student2);</b>
+&nbsp;
+<b class="nc">&nbsp;        library.lendBook(book5, student1);</b>
+&nbsp;
+&nbsp;        // Example for search functions
+<b class="nc">&nbsp;        var keys = new ArrayList&lt;Object&gt;(Arrays.asList(10, 11));</b>
+<b class="nc">&nbsp;        library.searchBooks(SearchByType.ID, keys); // Should return [book1, book2]</b>
+<b class="nc">&nbsp;        library.searchBooks(SearchByType.NAME, keys); // Should return null</b>
 &nbsp;    }
 &nbsp;}
 </code>
@@ -197,7 +149,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2024-07-30 22:38</div>
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
 </div>
 </body>
 </html>

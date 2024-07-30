@@ -1,0 +1,213 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ParentRunner</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.runners</a>
+</div>
+
+<h1>Coverage Summary for Class: ParentRunner (org.junit.runners)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ParentRunner</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/34)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/52)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/134)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.runners;
+&nbsp;
+&nbsp;public abstract class ParentRunner &lt;T&gt; extends org.junit.runner.Runner implements org.junit.runner.manipulation.Filterable, org.junit.runner.manipulation.Orderable {
+&nbsp;    private static final java.util.List&lt;org.junit.validator.TestClassValidator&gt; VALIDATORS;
+&nbsp;    private final java.util.concurrent.locks.Lock childrenLock;
+&nbsp;    private final org.junit.runners.model.TestClass testClass;
+&nbsp;    private volatile java.util.List&lt;T&gt; filteredChildren;
+&nbsp;    private volatile org.junit.runners.model.RunnerScheduler scheduler;
+&nbsp;
+&nbsp;    protected ParentRunner(java.lang.Class&lt;?&gt; testClass) throws org.junit.runners.model.InitializationError { /* compiled code */ }
+&nbsp;
+&nbsp;    protected ParentRunner(org.junit.runners.model.TestClass testClass) throws org.junit.runners.model.InitializationError { /* compiled code */ }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * @deprecated
+&nbsp;     */
+&nbsp;    @java.lang.Deprecated
+&nbsp;    protected org.junit.runners.model.TestClass createTestClass(java.lang.Class&lt;?&gt; testClass) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected abstract java.util.List&lt;T&gt; getChildren();
+&nbsp;
+&nbsp;    protected abstract org.junit.runner.Description describeChild(T t);
+&nbsp;
+&nbsp;    protected abstract void runChild(T t, org.junit.runner.notification.RunNotifier runNotifier);
+&nbsp;
+&nbsp;    protected void collectInitializationErrors(java.util.List&lt;java.lang.Throwable&gt; errors) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void applyValidators(java.util.List&lt;java.lang.Throwable&gt; errors) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected void validatePublicVoidNoArgMethods(java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotation, boolean isStatic, java.util.List&lt;java.lang.Throwable&gt; errors) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void validateClassRules(java.util.List&lt;java.lang.Throwable&gt; errors) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected org.junit.runners.model.Statement classBlock(org.junit.runner.notification.RunNotifier notifier) { /* compiled code */ }
+&nbsp;
+&nbsp;    private boolean areAllChildrenIgnored() { /* compiled code */ }
+&nbsp;
+&nbsp;    protected org.junit.runners.model.Statement withBeforeClasses(org.junit.runners.model.Statement statement) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected org.junit.runners.model.Statement withAfterClasses(org.junit.runners.model.Statement statement) { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.runners.model.Statement withClassRules(org.junit.runners.model.Statement statement) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected java.util.List&lt;org.junit.rules.TestRule&gt; classRules() { /* compiled code */ }
+&nbsp;
+&nbsp;    protected org.junit.runners.model.Statement childrenInvoker(org.junit.runner.notification.RunNotifier notifier) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected final org.junit.runners.model.Statement withInterruptIsolation(org.junit.runners.model.Statement statement) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected boolean isIgnored(T child) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void runChildren(org.junit.runner.notification.RunNotifier notifier) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected java.lang.String getName() { /* compiled code */ }
+&nbsp;
+&nbsp;    public final org.junit.runners.model.TestClass getTestClass() { /* compiled code */ }
+&nbsp;
+&nbsp;    protected final void runLeaf(org.junit.runners.model.Statement statement, org.junit.runner.Description description, org.junit.runner.notification.RunNotifier notifier) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected java.lang.annotation.Annotation[] getRunnerAnnotations() { /* compiled code */ }
+&nbsp;
+<b class="nc">&nbsp;    public org.junit.runner.Description getDescription() { /* compiled code */ }</b>
+&nbsp;
+<b class="nc">&nbsp;    public void run(org.junit.runner.notification.RunNotifier notifier) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;    public void filter(org.junit.runner.manipulation.Filter filter) throws org.junit.runner.manipulation.NoTestsRemainException { /* compiled code */ }
+<b class="nc">&nbsp;</b>
+&nbsp;    public void sort(org.junit.runner.manipulation.Sorter sorter) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void order(org.junit.runner.manipulation.Orderer orderer) throws org.junit.runner.manipulation.InvalidOrderingException { /* compiled code */ }
+<b class="nc">&nbsp;</b>
+&nbsp;    private boolean shouldNotReorder() { /* compiled code */ }
+<b class="nc">&nbsp;</b>
+&nbsp;    private void validate() throws org.junit.runners.model.InitializationError { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.List&lt;T&gt; getFilteredChildren() { /* compiled code */ }
+&nbsp;
+&nbsp;    private boolean shouldRun(org.junit.runner.manipulation.Filter filter, T each) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.Comparator&lt;? super T&gt; comparator(org.junit.runner.manipulation.Sorter sorter) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void setScheduler(org.junit.runners.model.RunnerScheduler scheduler) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static class ClassRuleCollector implements org.junit.runners.model.MemberValueConsumer&lt;org.junit.rules.TestRule&gt; {
+&nbsp;        final java.util.List&lt;org.junit.runners.RuleContainer.RuleEntry&gt; entries;
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;        private ClassRuleCollector() { /* compiled code */ }</b>
+<b class="nc">&nbsp;</b>
+&nbsp;        public void accept(org.junit.runners.model.FrameworkMember&lt;?&gt; member, org.junit.rules.TestRule value) { /* compiled code */ }
+&nbsp;
+&nbsp;        public java.util.List&lt;org.junit.rules.TestRule&gt; getOrderedRules() { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

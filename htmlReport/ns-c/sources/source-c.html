@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ClassOrderer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.api</a>
+</div>
+
+<h1>Coverage Summary for Class: ClassOrderer (org.junit.jupiter.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ClassOrderer</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.api;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;5.8&quot;)
+&nbsp;public interface ClassOrderer {
+&nbsp;    void orderClasses(org.junit.jupiter.api.ClassOrdererContext classOrdererContext);
+&nbsp;
+&nbsp;    static class Random implements org.junit.jupiter.api.ClassOrderer {
+&nbsp;        private static final org.junit.platform.commons.logging.Logger logger;
+&nbsp;        private static final long DEFAULT_SEED;
+&nbsp;        public static final java.lang.String RANDOM_SEED_PROPERTY_NAME = &quot;junit.jupiter.execution.order.random.seed&quot;;
+&nbsp;
+&nbsp;        public Random() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderClasses(org.junit.jupiter.api.ClassOrdererContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.util.Optional&lt;java.lang.Long&gt; getCustomSeed(org.junit.jupiter.api.ClassOrdererContext context) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    static class OrderAnnotation implements org.junit.jupiter.api.ClassOrderer {
+&nbsp;        public OrderAnnotation() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderClasses(org.junit.jupiter.api.ClassOrdererContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;        private static int getOrder(org.junit.jupiter.api.ClassDescriptor descriptor) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    static class DisplayName implements org.junit.jupiter.api.ClassOrderer {
+&nbsp;        private static final java.util.Comparator&lt;org.junit.jupiter.api.ClassDescriptor&gt; comparator;
+&nbsp;
+&nbsp;        public DisplayName() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderClasses(org.junit.jupiter.api.ClassOrdererContext context) { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    static class ClassName implements org.junit.jupiter.api.ClassOrderer {
+&nbsp;        private static final java.util.Comparator&lt;org.junit.jupiter.api.ClassDescriptor&gt; comparator;
+&nbsp;
+&nbsp;        public ClassName() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void orderClasses(org.junit.jupiter.api.ClassOrdererContext context) { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Try</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.platform.commons.function</a>
+</div>
+
+<h1>Coverage Summary for Class: Try (org.junit.platform.commons.function)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Try</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (8/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Try$Failure</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/23)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Try$Success</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (3/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    19%
+  </span>
+  <span class="absValue">
+    (4/21)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    28.1%
+  </span>
+  <span class="absValue">
+    (9/32)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    7.1%
+  </span>
+  <span class="absValue">
+    (1/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    21.4%
+  </span>
+  <span class="absValue">
+    (12/56)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.platform.commons.function;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;public abstract class Try &lt;V&gt; {
+&nbsp;    public static &lt;V&gt; org.junit.platform.commons.function.Try&lt;V&gt; call(java.util.concurrent.Callable&lt;V&gt; action) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static &lt;V&gt; org.junit.platform.commons.function.Try&lt;V&gt; success(V value) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static &lt;V&gt; org.junit.platform.commons.function.Try&lt;V&gt; failure(java.lang.Exception cause) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static &lt;T&gt; T checkNotNull(T input, java.lang.String title) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static &lt;V&gt; org.junit.platform.commons.function.Try&lt;V&gt; of(java.util.concurrent.Callable&lt;org.junit.platform.commons.function.Try&lt;V&gt;&gt; action) { /* compiled code */ }
+&nbsp;
+&nbsp;    private Try() { /* compiled code */ }
+&nbsp;
+&nbsp;    public abstract &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThenTry(org.junit.platform.commons.function.Try.Transformer&lt;V,U&gt; transformer);
+&nbsp;
+&nbsp;    public abstract &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThen(java.util.function.Function&lt;V,org.junit.platform.commons.function.Try&lt;U&gt;&gt; function);
+&nbsp;
+&nbsp;    public abstract org.junit.platform.commons.function.Try&lt;V&gt; orElseTry(java.util.concurrent.Callable&lt;V&gt; callable);
+&nbsp;
+&nbsp;    public abstract org.junit.platform.commons.function.Try&lt;V&gt; orElse(java.util.function.Supplier&lt;org.junit.platform.commons.function.Try&lt;V&gt;&gt; supplier);
+&nbsp;
+&nbsp;    public abstract V get() throws java.lang.Exception;
+&nbsp;
+&nbsp;    public abstract &lt;E extends java.lang.Exception&gt; V getOrThrow(java.util.function.Function&lt;? super java.lang.Exception,E&gt; function) throws E;
+&nbsp;
+&nbsp;    public abstract org.junit.platform.commons.function.Try&lt;V&gt; ifSuccess(java.util.function.Consumer&lt;V&gt; consumer);
+&nbsp;
+&nbsp;    public abstract org.junit.platform.commons.function.Try&lt;V&gt; ifFailure(java.util.function.Consumer&lt;java.lang.Exception&gt; consumer);
+&nbsp;
+&nbsp;    public abstract java.util.Optional&lt;V&gt; toOptional();
+&nbsp;
+&nbsp;    private static class Success &lt;V&gt; extends org.junit.platform.commons.function.Try&lt;V&gt; {
+&nbsp;        private final V value;
+&nbsp;
+<b class="fc">&nbsp;        Success(V value) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;        public &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThenTry(org.junit.platform.commons.function.Try.Transformer&lt;V,U&gt; transformer) { /* compiled code */ }
+&nbsp;
+&nbsp;        public &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThen(java.util.function.Function&lt;V,org.junit.platform.commons.function.Try&lt;U&gt;&gt; function) { /* compiled code */ }
+&nbsp;
+&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; orElseTry(java.util.concurrent.Callable&lt;V&gt; action) { /* compiled code */ }
+&nbsp;
+&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; orElse(java.util.function.Supplier&lt;org.junit.platform.commons.function.Try&lt;V&gt;&gt; supplier) { /* compiled code */ }
+&nbsp;
+&nbsp;        public V get() { /* compiled code */ }
+&nbsp;
+&nbsp;        public &lt;E extends java.lang.Exception&gt; V getOrThrow(java.util.function.Function&lt;? super java.lang.Exception,E&gt; exceptionTransformer) { /* compiled code */ }
+&nbsp;
+<b class="fc">&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; ifSuccess(java.util.function.Consumer&lt;V&gt; valueConsumer) { /* compiled code */ }</b>
+<b class="fc">&nbsp;</b>
+&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; ifFailure(java.util.function.Consumer&lt;java.lang.Exception&gt; causeConsumer) { /* compiled code */ }
+&nbsp;
+&nbsp;        public java.util.Optional&lt;V&gt; toOptional() { /* compiled code */ }
+&nbsp;
+&nbsp;        public boolean equals(java.lang.Object that) { /* compiled code */ }
+&nbsp;
+&nbsp;        public int hashCode() { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static class Failure &lt;V&gt; extends org.junit.platform.commons.function.Try&lt;V&gt; {
+<b class="fc">&nbsp;        private final java.lang.Exception cause;</b>
+&nbsp;
+&nbsp;        Failure(java.lang.Exception cause) { /* compiled code */ }
+&nbsp;
+&nbsp;        public &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThenTry(org.junit.platform.commons.function.Try.Transformer&lt;V,U&gt; transformer) { /* compiled code */ }
+&nbsp;
+&nbsp;        public &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; andThen(java.util.function.Function&lt;V,org.junit.platform.commons.function.Try&lt;U&gt;&gt; function) { /* compiled code */ }
+&nbsp;
+&nbsp;        private &lt;U&gt; org.junit.platform.commons.function.Try&lt;U&gt; uncheckedCast() { /* compiled code */ }
+&nbsp;
+&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; orElseTry(java.util.concurrent.Callable&lt;V&gt; action) { /* compiled code */ }
+<b class="nc">&nbsp;</b>
+&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; orElse(java.util.function.Supplier&lt;org.junit.platform.commons.function.Try&lt;V&gt;&gt; supplier) { /* compiled code */ }
+&nbsp;
+&nbsp;        public V get() throws java.lang.Exception { /* compiled code */ }
+&nbsp;
+<b class="pc">&nbsp;        public &lt;E extends java.lang.Exception&gt; V getOrThrow(java.util.function.Function&lt;? super java.lang.Exception,E&gt; exceptionTransformer) throws E { /* compiled code */ }</b>
+&nbsp;
+<b class="nc">&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; ifSuccess(java.util.function.Consumer&lt;V&gt; valueConsumer) { /* compiled code */ }</b>
+&nbsp;
+<b class="fc">&nbsp;        public org.junit.platform.commons.function.Try&lt;V&gt; ifFailure(java.util.function.Consumer&lt;java.lang.Exception&gt; causeConsumer) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;        public java.util.Optional&lt;V&gt; toOptional() { /* compiled code */ }
+&nbsp;
+&nbsp;        public boolean equals(java.lang.Object that) { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+&nbsp;        public int hashCode() { /* compiled code */ }
+<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;</b>
+&nbsp;    @java.lang.FunctionalInterface
+&nbsp;    public static interface Transformer &lt;S, T&gt; {
+&nbsp;        T apply(S s) throws java.lang.Exception;
+<b class="fc">&nbsp;    }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

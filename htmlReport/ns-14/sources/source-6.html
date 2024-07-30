@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ExtensionValuesStore</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.engine.execution</a>
+</div>
+
+<h1>Coverage Summary for Class: ExtensionValuesStore (org.junit.jupiter.engine.execution)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ExtensionValuesStore</td>
+<td class="coverageStat">
+  <span class="percent">
+    78.6%
+  </span>
+  <span class="absValue">
+    (11/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.8%
+  </span>
+  <span class="absValue">
+    (11/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    82.2%
+  </span>
+  <span class="absValue">
+    (37/45)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ExtensionValuesStore$CompositeKey</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (4/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    81.8%
+  </span>
+  <span class="absValue">
+    (9/11)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ExtensionValuesStore$MemoizingSupplier</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (4/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (15/18)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ExtensionValuesStore$MemoizingSupplier$Failure</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ExtensionValuesStore$StoredValue</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (6/8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    82.8%
+  </span>
+  <span class="absValue">
+    (24/29)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    63.3%
+  </span>
+  <span class="absValue">
+    (19/30)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    78.8%
+  </span>
+  <span class="absValue">
+    (67/85)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.engine.execution;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.INTERNAL, since = &quot;5.0&quot;)
+&nbsp;public class ExtensionValuesStore {
+&nbsp;    private static final java.util.Comparator&lt;org.junit.jupiter.engine.execution.ExtensionValuesStore.StoredValue&gt; REVERSE_INSERT_ORDER;
+&nbsp;    private final java.util.concurrent.atomic.AtomicInteger insertOrderSequence;
+&nbsp;    private final java.util.concurrent.ConcurrentMap&lt;org.junit.jupiter.engine.execution.ExtensionValuesStore.CompositeKey,org.junit.jupiter.engine.execution.ExtensionValuesStore.StoredValue&gt; storedValues;
+&nbsp;    private final org.junit.jupiter.engine.execution.ExtensionValuesStore parentStore;
+&nbsp;
+&nbsp;    public ExtensionValuesStore(org.junit.jupiter.engine.execution.ExtensionValuesStore parentStore) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void closeAllStoredCloseableValues() { /* compiled code */ }
+&nbsp;
+&nbsp;    java.lang.Object get(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key) { /* compiled code */ }
+&nbsp;
+&nbsp;    &lt;T&gt; T get(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key, java.lang.Class&lt;T&gt; requiredType) { /* compiled code */ }
+&nbsp;
+&nbsp;    &lt;K, V&gt; java.lang.Object getOrComputeIfAbsent(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, K key, java.util.function.Function&lt;K,V&gt; defaultCreator) { /* compiled code */ }
+&nbsp;
+&nbsp;    &lt;K, V&gt; V getOrComputeIfAbsent(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, K key, java.util.function.Function&lt;K,V&gt; defaultCreator, java.lang.Class&lt;V&gt; requiredType) { /* compiled code */ }
+&nbsp;
+&nbsp;    void put(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key, java.lang.Object value) { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.jupiter.engine.execution.ExtensionValuesStore.StoredValue storedValue(java.util.function.Supplier&lt;java.lang.Object&gt; value) { /* compiled code */ }
+&nbsp;
+&nbsp;    java.lang.Object remove(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key) { /* compiled code */ }
+&nbsp;
+&nbsp;    &lt;T&gt; T remove(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key, java.lang.Class&lt;T&gt; requiredType) { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.jupiter.engine.execution.ExtensionValuesStore.StoredValue getStoredValue(org.junit.jupiter.engine.execution.ExtensionValuesStore.CompositeKey compositeKey) { /* compiled code */ }
+&nbsp;
+&nbsp;    private &lt;T&gt; T castToRequiredType(java.lang.Object key, java.lang.Object value, java.lang.Class&lt;T&gt; requiredType) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static class CompositeKey {
+&nbsp;        private final org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace;
+&nbsp;        private final java.lang.Object key;
+&nbsp;
+&nbsp;        private CompositeKey(org.junit.jupiter.api.extension.ExtensionContext.Namespace namespace, java.lang.Object key) { /* compiled code */ }
+&nbsp;
+&nbsp;        public boolean equals(java.lang.Object o) { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        public int hashCode() { /* compiled code */ }</b>
+&nbsp;    }
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;    private static class StoredValue {</b>
+&nbsp;        private final int order;
+&nbsp;        private final java.util.function.Supplier&lt;java.lang.Object&gt; supplier;
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        public StoredValue(int order, java.util.function.Supplier&lt;java.lang.Object&gt; supplier) { /* compiled code */ }</b>
+&nbsp;
+&nbsp;        private java.lang.Object evaluateSafely() { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.lang.Object evaluate() { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static class MemoizingSupplier implements java.util.function.Supplier&lt;java.lang.Object&gt; {
+&nbsp;        private static final java.lang.Object NO_VALUE_SET;
+&nbsp;        private final java.util.concurrent.locks.Lock lock;
+<b class="fc">&nbsp;        private final java.util.function.Supplier&lt;java.lang.Object&gt; delegate;</b>
+<b class="fc">&nbsp;        private volatile java.lang.Object value;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        private MemoizingSupplier(java.util.function.Supplier&lt;java.lang.Object&gt; delegate) { /* compiled code */ }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        public java.lang.Object get() { /* compiled code */ }</b>
+<b class="fc">&nbsp;</b>
+&nbsp;        private void computeValue() { /* compiled code */ }
+&nbsp;
+&nbsp;        private static class Failure {
+<b class="fc">&nbsp;            private final java.lang.RuntimeException exception;</b>
+<b class="pc">&nbsp;</b>
+&nbsp;            public Failure(java.lang.RuntimeException exception) { /* compiled code */ }
+&nbsp;        }
+&nbsp;    }
+<b class="fc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

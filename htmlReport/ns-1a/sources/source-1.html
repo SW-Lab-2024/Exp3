@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > AnnotationSupport</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.platform.commons.support</a>
+</div>
+
+<h1>Coverage Summary for Class: AnnotationSupport (org.junit.platform.commons.support)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AnnotationSupport</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    11.8%
+  </span>
+  <span class="absValue">
+    (2/17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    6.2%
+  </span>
+  <span class="absValue">
+    (2/32)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.platform.commons.support;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.0&quot;)
+&nbsp;public final class AnnotationSupport {
+&nbsp;    private AnnotationSupport() { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.3&quot;)
+&nbsp;    public static boolean isAnnotated(java.util.Optional&lt;? extends java.lang.reflect.AnnotatedElement&gt; element, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static boolean isAnnotated(java.lang.reflect.AnnotatedElement element, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.1&quot;)
+&nbsp;    public static &lt;A extends java.lang.annotation.Annotation&gt; java.util.Optional&lt;A&gt; findAnnotation(java.util.Optional&lt;? extends java.lang.reflect.AnnotatedElement&gt; element, java.lang.Class&lt;A&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static &lt;A extends java.lang.annotation.Annotation&gt; java.util.Optional&lt;A&gt; findAnnotation(java.lang.reflect.AnnotatedElement element, java.lang.Class&lt;A&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.EXPERIMENTAL, since = &quot;1.8&quot;)
+&nbsp;    public static &lt;A extends java.lang.annotation.Annotation&gt; java.util.Optional&lt;A&gt; findAnnotation(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;A&gt; annotationType, org.junit.platform.commons.support.SearchOption searchOption) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.5&quot;)
+&nbsp;    public static &lt;A extends java.lang.annotation.Annotation&gt; java.util.List&lt;A&gt; findRepeatableAnnotations(java.util.Optional&lt;? extends java.lang.reflect.AnnotatedElement&gt; element, java.lang.Class&lt;A&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static &lt;A extends java.lang.annotation.Annotation&gt; java.util.List&lt;A&gt; findRepeatableAnnotations(java.lang.reflect.AnnotatedElement element, java.lang.Class&lt;A&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static java.util.List&lt;java.lang.reflect.Field&gt; findPublicAnnotatedFields(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;?&gt; fieldType, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static java.util.List&lt;java.lang.reflect.Field&gt; findAnnotatedFields(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static java.util.List&lt;java.lang.reflect.Field&gt; findAnnotatedFields(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType, java.util.function.Predicate&lt;java.lang.reflect.Field&gt; predicate, org.junit.platform.commons.support.HierarchyTraversalMode traversalMode) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static java.util.List&lt;java.lang.Object&gt; findAnnotatedFieldValues(java.lang.Object instance, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static java.util.List&lt;java.lang.Object&gt; findAnnotatedFieldValues(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static &lt;T&gt; java.util.List&lt;T&gt; findAnnotatedFieldValues(java.lang.Object instance, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType, java.lang.Class&lt;T&gt; fieldType) { /* compiled code */ }
+&nbsp;
+&nbsp;    @org.apiguardian.api.API(status = org.apiguardian.api.API.Status.MAINTAINED, since = &quot;1.4&quot;)
+&nbsp;    public static &lt;T&gt; java.util.List&lt;T&gt; findAnnotatedFieldValues(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType, java.lang.Class&lt;T&gt; fieldType) { /* compiled code */ }
+&nbsp;
+&nbsp;    public static java.util.List&lt;java.lang.reflect.Method&gt; findAnnotatedMethods(java.lang.Class&lt;?&gt; clazz, java.lang.Class&lt;? extends java.lang.annotation.Annotation&gt; annotationType, org.junit.platform.commons.support.HierarchyTraversalMode traversalMode) { /* compiled code */ }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

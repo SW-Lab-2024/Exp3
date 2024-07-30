@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ClasspathScanner</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.platform.commons.util</a>
+</div>
+
+<h1>Coverage Summary for Class: ClasspathScanner (org.junit.platform.commons.util)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ClasspathScanner</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.8%
+  </span>
+  <span class="absValue">
+    (11/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    13.6%
+  </span>
+  <span class="absValue">
+    (3/22)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    39.4%
+  </span>
+  <span class="absValue">
+    (37/94)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.platform.commons.util;
+&nbsp;
+&nbsp;class ClasspathScanner {
+&nbsp;    private static final org.junit.platform.commons.logging.Logger logger;
+&nbsp;    private static final char CLASSPATH_RESOURCE_PATH_SEPARATOR = &#39;/&#39;;
+&nbsp;    private static final java.lang.String CLASSPATH_RESOURCE_PATH_SEPARATOR_STRING;
+&nbsp;    private static final char PACKAGE_SEPARATOR_CHAR = &#39;.&#39;;
+&nbsp;    private static final java.lang.String PACKAGE_SEPARATOR_STRING;
+&nbsp;    private static final java.lang.String MALFORMED_CLASS_NAME_ERROR_MESSAGE = &quot;Malformed class name&quot;;
+&nbsp;    private final java.util.function.Supplier&lt;java.lang.ClassLoader&gt; classLoaderSupplier;
+&nbsp;    private final java.util.function.BiFunction&lt;java.lang.String,java.lang.ClassLoader,org.junit.platform.commons.function.Try&lt;java.lang.Class&lt;?&gt;&gt;&gt; loadClass;
+&nbsp;
+&nbsp;    ClasspathScanner(java.util.function.Supplier&lt;java.lang.ClassLoader&gt; classLoaderSupplier, java.util.function.BiFunction&lt;java.lang.String,java.lang.ClassLoader,org.junit.platform.commons.function.Try&lt;java.lang.Class&lt;?&gt;&gt;&gt; loadClass) { /* compiled code */ }
+&nbsp;
+&nbsp;    java.util.List&lt;java.lang.Class&lt;?&gt;&gt; scanForClassesInPackage(java.lang.String basePackageName, org.junit.platform.commons.util.ClassFilter classFilter) { /* compiled code */ }
+&nbsp;
+&nbsp;    java.util.List&lt;java.lang.Class&lt;?&gt;&gt; scanForClassesInClasspathRoot(java.net.URI root, org.junit.platform.commons.util.ClassFilter classFilter) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.List&lt;java.lang.Class&lt;?&gt;&gt; findClassesForUris(java.util.List&lt;java.net.URI&gt; baseUris, java.lang.String basePackageName, org.junit.platform.commons.util.ClassFilter classFilter) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.List&lt;java.lang.Class&lt;?&gt;&gt; findClassesForUri(java.net.URI baseUri, java.lang.String basePackageName, org.junit.platform.commons.util.ClassFilter classFilter) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.List&lt;java.lang.Class&lt;?&gt;&gt; findClassesForPath(java.nio.file.Path baseDir, java.lang.String basePackageName, org.junit.platform.commons.util.ClassFilter classFilter) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void processClassFileSafely(java.nio.file.Path baseDir, java.lang.String basePackageName, org.junit.platform.commons.util.ClassFilter classFilter, java.nio.file.Path classFile, java.util.function.Consumer&lt;java.lang.Class&lt;?&gt;&gt; classConsumer) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.lang.String determineFullyQualifiedClassName(java.nio.file.Path baseDir, java.lang.String basePackageName, java.nio.file.Path classFile) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.lang.String determineSimpleClassName(java.nio.file.Path classFile) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.lang.String determineSubpackageName(java.nio.file.Path baseDir, java.nio.file.Path classFile) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void handleInternalError(java.nio.file.Path classFile, java.lang.String fullyQualifiedClassName, java.lang.InternalError ex) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void handleThrowable(java.nio.file.Path classFile, java.lang.Throwable throwable) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void logMalformedClassName(java.nio.file.Path classFile, java.lang.String fullyQualifiedClassName, java.lang.InternalError ex) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void logGenericFileProcessingException(java.nio.file.Path classFile, java.lang.Throwable throwable) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.lang.ClassLoader getClassLoader() { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.util.List&lt;java.net.URI&gt; getRootUrisForPackageNameOnClassPathAndModulePath(java.lang.String basePackageName) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static java.net.URI removeTrailingClasspathResourcePathSeparator(java.net.URI uri) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static java.lang.String packagePath(java.lang.String packageName) { /* compiled code */ }
+<b class="fc">&nbsp;</b>
+&nbsp;    private java.util.List&lt;java.net.URI&gt; getRootUrisForPackage(java.lang.String basePackageName) { /* compiled code */ }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

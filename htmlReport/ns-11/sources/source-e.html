@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > TestMethodTestDescriptor</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.engine.descriptor</a>
+</div>
+
+<h1>Coverage Summary for Class: TestMethodTestDescriptor (org.junit.jupiter.engine.descriptor)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TestMethodTestDescriptor</td>
+<td class="coverageStat">
+  <span class="percent">
+    63.9%
+  </span>
+  <span class="absValue">
+    (23/36)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.6%
+  </span>
+  <span class="absValue">
+    (10/21)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.2%
+  </span>
+  <span class="absValue">
+    (69/93)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TestMethodTestDescriptor$CallbackInvoker</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    63.9%
+  </span>
+  <span class="absValue">
+    (23/36)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.6%
+  </span>
+  <span class="absValue">
+    (10/21)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.2%
+  </span>
+  <span class="absValue">
+    (69/93)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.engine.descriptor;
+&nbsp;
+&nbsp;@org.apiguardian.api.API(status = org.apiguardian.api.API.Status.INTERNAL, since = &quot;5.0&quot;)
+&nbsp;public class TestMethodTestDescriptor extends org.junit.jupiter.engine.descriptor.MethodBasedTestDescriptor {
+&nbsp;    public static final java.lang.String SEGMENT_TYPE = &quot;method&quot;;
+&nbsp;    private static final org.junit.jupiter.engine.execution.ExecutableInvoker executableInvoker;
+&nbsp;    private static final org.junit.jupiter.engine.execution.ExecutableInvoker.ReflectiveInterceptorCall&lt;java.lang.reflect.Method,java.lang.Void&gt; defaultInterceptorCall;
+&nbsp;    private final org.junit.jupiter.engine.execution.ExecutableInvoker.ReflectiveInterceptorCall&lt;java.lang.reflect.Method,java.lang.Void&gt; interceptorCall;
+&nbsp;
+&nbsp;    public TestMethodTestDescriptor(org.junit.platform.engine.UniqueId uniqueId, java.lang.Class&lt;?&gt; testClass, java.lang.reflect.Method testMethod, org.junit.jupiter.engine.config.JupiterConfiguration configuration) { /* compiled code */ }
+&nbsp;
+&nbsp;    TestMethodTestDescriptor(org.junit.platform.engine.UniqueId uniqueId, java.lang.String displayName, java.lang.Class&lt;?&gt; testClass, java.lang.reflect.Method testMethod, org.junit.jupiter.engine.config.JupiterConfiguration configuration, org.junit.jupiter.engine.execution.ExecutableInvoker.ReflectiveInterceptorCall&lt;java.lang.reflect.Method,java.lang.Void&gt; interceptorCall) { /* compiled code */ }
+&nbsp;
+&nbsp;    public org.junit.platform.engine.TestDescriptor.Type getType() { /* compiled code */ }
+&nbsp;
+&nbsp;    public org.junit.jupiter.engine.execution.JupiterEngineExecutionContext prepare(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected org.junit.jupiter.engine.extension.MutableExtensionRegistry populateNewExtensionRegistry(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    public org.junit.jupiter.engine.execution.JupiterEngineExecutionContext execute(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context, org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor dynamicTestExecutor) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void cleanUp(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) throws java.lang.Exception { /* compiled code */ }
+&nbsp;
+&nbsp;    private boolean isPerMethodLifecycle(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeBeforeEachCallbacks(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeBeforeEachMethods(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeBeforeEachExecutionExceptionHandlers(org.junit.jupiter.api.extension.ExtensionContext context, org.junit.jupiter.engine.extension.ExtensionRegistry registry, java.lang.Throwable throwable) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeBeforeTestExecutionCallbacks(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private &lt;T extends org.junit.jupiter.api.extension.Extension&gt; void invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(java.lang.Class&lt;T&gt; type, org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context, org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.CallbackInvoker&lt;T&gt; callbackInvoker) { /* compiled code */ }
+&nbsp;
+&nbsp;    protected void invokeTestMethod(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context, org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor dynamicTestExecutor) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeTestExecutionExceptionHandlers(org.junit.jupiter.engine.extension.ExtensionRegistry registry, org.junit.jupiter.api.extension.ExtensionContext context, java.lang.Throwable throwable) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeAfterTestExecutionCallbacks(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeAfterEachMethods(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeAfterEachExecutionExceptionHandlers(org.junit.jupiter.api.extension.ExtensionContext context, org.junit.jupiter.engine.extension.ExtensionRegistry registry, java.lang.Throwable throwable) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeAfterEachCallbacks(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void invokeTestInstancePreDestroyCallbacks(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private &lt;T extends org.junit.jupiter.api.extension.Extension&gt; void invokeAllAfterMethodsOrCallbacks(java.lang.Class&lt;T&gt; type, org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context, org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.CallbackInvoker&lt;T&gt; callbackInvoker) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void nodeFinished(org.junit.jupiter.engine.execution.JupiterEngineExecutionContext context, org.junit.platform.engine.TestDescriptor descriptor, org.junit.platform.engine.TestExecutionResult result) { /* compiled code */ }
+&nbsp;
+&nbsp;    @java.lang.FunctionalInterface
+&nbsp;    private static interface CallbackInvoker &lt;T extends org.junit.jupiter.api.extension.Extension&gt; {
+&nbsp;        void invoke(T t, org.junit.jupiter.api.extension.ExtensionContext extensionContext) throws java.lang.Throwable;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

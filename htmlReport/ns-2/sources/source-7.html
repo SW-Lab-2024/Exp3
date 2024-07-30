@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > StudentTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">classes</a>
+</div>
+
+<h1>Coverage Summary for Class: StudentTest (classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">StudentTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (18/18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package classes;
+&nbsp;
+&nbsp;import org.junit.jupiter.api.Assertions;
+&nbsp;import org.junit.jupiter.api.BeforeEach;
+&nbsp;import org.junit.jupiter.api.DisplayName;
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;
+<b class="fc">&nbsp;public class StudentTest {</b>
+&nbsp;    private Student student;
+&nbsp;    private Book book;
+&nbsp;
+&nbsp;    @BeforeEach
+&nbsp;    public void setUp() {
+<b class="fc">&nbsp;        student = new Student(&quot;Name&quot;, 1);</b>
+<b class="fc">&nbsp;        book = new Book(&quot;Title&quot;, &quot;Author&quot;, 1);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test Student constructor and getters&quot;)
+&nbsp;    public void testStudentConstructorAndGetters() {
+<b class="fc">&nbsp;        Assertions.assertEquals(&quot;Name&quot;, student.getName());</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(1, student.getId());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test Student toString method&quot;)
+&nbsp;    public void testToString() {
+<b class="fc">&nbsp;        Assertions.assertEquals(&quot;Name|1&quot;, student.toString());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test matches method with ID&quot;)
+&nbsp;    public void testMatchesWithId() {
+<b class="fc">&nbsp;        Assertions.assertTrue(student.matches(SearchByType.ID, 1));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.matches(SearchByType.ID, 2));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test matches method with Name&quot;)
+&nbsp;    public void testMatchesWithName() {
+<b class="fc">&nbsp;        Assertions.assertTrue(student.matches(SearchByType.NAME, &quot;Name&quot;));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.matches(SearchByType.NAME, &quot;Other&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test matches method with invalid key type&quot;)
+&nbsp;    public void testMatchesWithInvalidKeyType() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; student.matches(SearchByType.ID, &quot;invalid&quot;));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test addBook and hasBook methods&quot;)
+&nbsp;    public void testAddBookAndHasBook() {
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+<b class="fc">&nbsp;        student.addBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Test removeBook method&quot;)
+&nbsp;    public void testRemoveBook() {
+<b class="fc">&nbsp;        student.addBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(student.hasBook(book));</b>
+<b class="fc">&nbsp;        student.removeBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>

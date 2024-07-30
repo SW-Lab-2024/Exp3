@@ -1,0 +1,211 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > TempDirectory</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.junit.jupiter.engine.extension</a>
+</div>
+
+<h1>Coverage Summary for Class: TempDirectory (org.junit.jupiter.engine.extension)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TempDirectory</td>
+<td class="coverageStat">
+  <span class="percent">
+    46.7%
+  </span>
+  <span class="absValue">
+    (7/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    23.5%
+  </span>
+  <span class="absValue">
+    (8/34)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TempDirectory$Scope</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    41.2%
+  </span>
+  <span class="absValue">
+    (7/17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    21.6%
+  </span>
+  <span class="absValue">
+    (8/37)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;
+&nbsp;  // IntelliJ API Decompiler stub source generated from a class file
+&nbsp;  // Implementation of methods is not available
+&nbsp;
+&nbsp;package org.junit.jupiter.engine.extension;
+&nbsp;
+&nbsp;class TempDirectory implements org.junit.jupiter.api.extension.BeforeAllCallback, org.junit.jupiter.api.extension.BeforeEachCallback, org.junit.jupiter.api.extension.ParameterResolver {
+&nbsp;    private static final org.junit.jupiter.api.extension.ExtensionContext.Namespace NAMESPACE;
+&nbsp;    private static final java.lang.String KEY = &quot;temp.dir&quot;;
+&nbsp;    private static final java.lang.String TEMP_DIR_PREFIX = &quot;junit&quot;;
+&nbsp;
+&nbsp;    TempDirectory() { /* compiled code */ }
+&nbsp;
+&nbsp;    public void beforeAll(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    public void beforeEach(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void injectStaticFields(org.junit.jupiter.api.extension.ExtensionContext context, java.lang.Class&lt;?&gt; testClass) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void injectInstanceFields(org.junit.jupiter.api.extension.ExtensionContext context, java.lang.Object instance) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void injectFields(org.junit.jupiter.api.extension.ExtensionContext context, java.lang.Object testInstance, java.lang.Class&lt;?&gt; testClass, java.util.function.Predicate&lt;java.lang.reflect.Field&gt; predicate) { /* compiled code */ }
+&nbsp;
+&nbsp;    public boolean supportsParameter(org.junit.jupiter.api.extension.ParameterContext parameterContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    public java.lang.Object resolveParameter(org.junit.jupiter.api.extension.ParameterContext parameterContext, org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    private void assertSupportedType(java.lang.String target, java.lang.Class&lt;?&gt; type) { /* compiled code */ }
+&nbsp;
+&nbsp;    private java.lang.Object getPathOrFile(java.lang.reflect.AnnotatedElement sourceElement, java.lang.Class&lt;?&gt; type, org.junit.jupiter.api.extension.ExtensionContext extensionContext) { /* compiled code */ }
+&nbsp;
+&nbsp;    private org.junit.jupiter.engine.extension.TempDirectory.Scope getScope(org.junit.jupiter.api.extension.ExtensionContext context) { /* compiled code */ }
+&nbsp;
+&nbsp;    private static org.junit.jupiter.engine.extension.TempDirectory.CloseablePath createTempDir() { /* compiled code */ }
+&nbsp;
+&nbsp;    static enum Scope {
+&nbsp;        PER_CONTEXT, PER_DECLARATION;
+&nbsp;
+&nbsp;        private Scope() { /* compiled code */ }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static class CloseablePath implements org.junit.jupiter.api.extension.ExtensionContext.Store.CloseableResource {
+&nbsp;        private final java.nio.file.Path dir;
+&nbsp;
+&nbsp;        CloseablePath(java.nio.file.Path dir) { /* compiled code */ }
+&nbsp;
+&nbsp;        java.nio.file.Path get() { /* compiled code */ }
+&nbsp;
+&nbsp;        public void close() throws java.io.IOException { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.util.SortedMap&lt;java.nio.file.Path,java.io.IOException&gt; deleteAllFilesAndDirectories() throws java.io.IOException { /* compiled code */ }
+&nbsp;
+&nbsp;        private static void resetPermissions(java.nio.file.Path path) { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.io.IOException createIOExceptionWithAttachedFailures(java.util.SortedMap&lt;java.nio.file.Path,java.io.IOException&gt; failures) { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.nio.file.Path tryToDeleteOnExit(java.nio.file.Path path) { /* compiled code */ }
+&nbsp;
+&nbsp;        private java.nio.file.Path relativizeSafely(java.nio.file.Path path) { /* compiled code */ }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-31 00:16</div>
+</div>
+</body>
+</html>
