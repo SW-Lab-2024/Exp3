@@ -39,4 +39,11 @@ public class StudentTest {
         Assertions.assertTrue(student.matches(SearchByType.NAME, "Name"));
         Assertions.assertFalse(student.matches(SearchByType.NAME, "Other"));
     }
+
+    @Test
+    @DisplayName("Test matches method with invalid key type")
+    public void testMatchesWithInvalidKeyType() {
+        Student student = new Student("Name", 1);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> student.matches(SearchByType.ID, "invalid"));
+    }
 }
