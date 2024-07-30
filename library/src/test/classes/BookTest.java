@@ -26,4 +26,11 @@ public class BookTest {
     public void testToString() {
         Assertions.assertEquals("Title by Author", book.toString());
     }
+
+    @Test
+    @DisplayName("Test matches method with ID")
+    public void testMatchesWithId() {
+        Assertions.assertTrue(book.matches(SearchByType.ID, 1));
+        Assertions.assertFalse(book.matches(SearchByType.ID, 2));
+    }
 }
