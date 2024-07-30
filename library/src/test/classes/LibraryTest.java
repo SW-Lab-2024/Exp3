@@ -243,4 +243,13 @@ public class LibraryTest {
     /*
      * End of searchStudent test block
      */
+
+    @Test
+    @DisplayName("Test search method in Library with empty result")
+    public void testSearchEmptyResult() {
+        ArrayList<Object> keys = new ArrayList<>();
+        keys.add("NonExistingBook");
+        Assertions.assertNull(library.searchBooks(SearchByType.TITLE, keys));
+    }
+
 }
