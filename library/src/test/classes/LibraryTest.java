@@ -22,6 +22,15 @@ public class LibraryTest {
         library.addStudent(student);
     }
 
+    @Test
+    @DisplayName("adding a book to the library")
+    public void testAddBook() {
+        Book newBook = new Book("Book-2", "Author-2", 2);
+        library.addBook(newBook);
+        Assertions.assertTrue(library.hasBook(newBook));
+    }
+
+
     /*
      * Begin of lendBook test block
      */
