@@ -113,8 +113,7 @@ Searchable را پیاده‌سازی می‌کردند استفاده می‌ک
 با افزودن تست های بیشتر برای همه کلاس‌ها و البته پوشاندن تقریبا‌ همه‌جای پروژه از انواع تست و سپس بازآرایی های لازم به
 منظور جداسازی تست‌های کلاس Student و Book از Library و نهایتا اعمال AAA (Arrange-Act-Assert) به کاورج زیر رسیدیم:
 
-  ![library_test_coverage_ii](https://github.com/user-attachments/assets/91ed7be4-7ee8-461a-95ac-2c82cc20d74c)
-
+![library_test_coverage_ii](https://github.com/user-attachments/assets/91ed7be4-7ee8-461a-95ac-2c82cc20d74c)
 
 پایان!
 
