@@ -234,6 +234,12 @@ public class LibraryTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> library.searchStudents(SearchByType.ID, createKeys("student-1", 1)));
     }
 
+    @Test
+    @DisplayName("Test matches method in Student class with invalid key type")
+    public void searchStudentMatchesInvalidKeyType() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> student.matches(SearchByType.ID, "invalid"));
+    }
+
     /*
      * End of searchStudent test block
      */
