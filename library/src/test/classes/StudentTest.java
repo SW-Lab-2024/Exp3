@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 
 public class StudentTest {
     private Student student;
+    private Book book;
 
     @BeforeEach
     public void setUp() {
         student = new Student("Name", 1);
+        book = new Book("Title", "Author", 1);
     }
 
     @Test
@@ -43,15 +45,12 @@ public class StudentTest {
     @Test
     @DisplayName("Test matches method with invalid key type")
     public void testMatchesWithInvalidKeyType() {
-        Student student = new Student("Name", 1);
         Assertions.assertThrows(IllegalArgumentException.class, () -> student.matches(SearchByType.ID, "invalid"));
     }
 
     @Test
     @DisplayName("Test addBook and hasBook methods")
     public void testAddBookAndHasBook() {
-        Student student = new Student("Name", 1);
-        Book book = new Book("Title", "Author", 1);
         Assertions.assertFalse(student.hasBook(book));
         student.addBook(book);
         Assertions.assertTrue(student.hasBook(book));
@@ -60,8 +59,6 @@ public class StudentTest {
     @Test
     @DisplayName("Test removeBook method")
     public void testRemoveBook() {
-        Student student = new Student("Name", 1);
-        Book book = new Book("Title", "Author", 1);
         student.addBook(book);
         Assertions.assertTrue(student.hasBook(book));
         student.removeBook(book);
