@@ -13,4 +13,11 @@ public class StudentTest {
         Assertions.assertEquals("Name", student.getName());
         Assertions.assertEquals(1, student.getId());
     }
+
+    @Test
+    @DisplayName("Test Student toString method")
+    public void testToString() {
+        Student student = new Student("Name", 1);
+        Assertions.assertEquals("Name|1", student.toString());
+    }
 }
