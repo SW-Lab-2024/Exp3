@@ -20,4 +20,12 @@ public class StudentTest {
         Student student = new Student("Name", 1);
         Assertions.assertEquals("Name|1", student.toString());
     }
+
+    @Test
+    @DisplayName("Test matches method with ID")
+    public void testMatchesWithId() {
+        Student student = new Student("Name", 1);
+        Assertions.assertTrue(student.matches(SearchByType.ID, 1));
+        Assertions.assertFalse(student.matches(SearchByType.ID, 2));
+    }
 }
