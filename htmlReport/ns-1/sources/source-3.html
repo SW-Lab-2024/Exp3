@@ -1,0 +1,322 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > LibraryTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">classes</a>
+</div>
+
+<h1>Coverage Summary for Class: LibraryTest (classes)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LibraryTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (23/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (67/67)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package classes;
+&nbsp;
+&nbsp;import org.junit.jupiter.api.Assertions;
+&nbsp;import org.junit.jupiter.api.BeforeEach;
+&nbsp;import org.junit.jupiter.api.DisplayName;
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+<b class="fc">&nbsp;public class LibraryTest {</b>
+&nbsp;    private Library library;
+&nbsp;    private Book book;
+&nbsp;    private Student student;
+&nbsp;
+&nbsp;    @BeforeEach
+&nbsp;    public void setUp() {
+<b class="fc">&nbsp;        library = new Library();</b>
+<b class="fc">&nbsp;        book = new Book(&quot;Book-1&quot;, &quot;Author-1&quot;, 1);</b>
+<b class="fc">&nbsp;        student = new Student(&quot;Student-1&quot;, 1);</b>
+<b class="fc">&nbsp;        library.addBook(book);</b>
+<b class="fc">&nbsp;        library.addStudent(student);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * Begin of lendBook test block
+&nbsp;     */
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;lendBook happy day!&quot;)
+&nbsp;    public void lendBookHappyDayTest() {
+<b class="fc">&nbsp;        Assertions.assertTrue(library.lendBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;lendBook when the library does not have the book.&quot;)
+&nbsp;    public void lendBookWhenLibraryDoesNotHaveBook() {
+<b class="fc">&nbsp;        Book book = new Book(&quot;Book-1&quot;, &quot;Author-1&quot;, 1);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.lendBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;lendBook when the library does not have the student.&quot;)
+&nbsp;    public void lendBookWhenLibraryDoesNotHaveStudent() {
+<b class="fc">&nbsp;        Student student = new Student(&quot;Student-1&quot;, 1);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.lendBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;lendBook when the student has the book already.&quot;)
+&nbsp;    public void lendBookWhenStudentHasBookAlready() {
+<b class="fc">&nbsp;        student.addBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.lendBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * End of lendBook test block
+&nbsp;     */
+&nbsp;
+&nbsp;    /*
+&nbsp;     * Begin of returnBook test block
+&nbsp;     */
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;returnBook happy day!&quot;)
+&nbsp;    public void returnBookHappyDayTest() {
+<b class="fc">&nbsp;        student.addBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.returnBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;returnBook when the library does not have the student.&quot;)
+&nbsp;    public void returnBookWhenLibraryDoesNotHaveStudent() {
+<b class="fc">&nbsp;        Library library = new Library();</b>
+<b class="fc">&nbsp;        Book book = new Book(&quot;Book-1&quot;, &quot;Author-1&quot;, 1);</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;Student-1&quot;, 1);</b>
+<b class="fc">&nbsp;        student.addBook(book);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.returnBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;returnBook when the student does not have the book.&quot;)
+&nbsp;    public void returnBookWhenStudentDoesNotHaveBook() {
+<b class="fc">&nbsp;        Library library = new Library();</b>
+<b class="fc">&nbsp;        Book book = new Book(&quot;Book-1&quot;, &quot;Author-1&quot;, 1);</b>
+<b class="fc">&nbsp;        Student student = new Student(&quot;Student-1&quot;, 1);</b>
+<b class="fc">&nbsp;        library.addStudent(student);</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.returnBook(book, student));</b>
+<b class="fc">&nbsp;        Assertions.assertTrue(library.hasStudent(student));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(library.hasBook(book));</b>
+<b class="fc">&nbsp;        Assertions.assertFalse(student.hasBook(book));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * End of returnBook test block
+&nbsp;     */
+&nbsp;
+&nbsp;    /*
+&nbsp;     * Begin of searchBooks test block
+&nbsp;     */
+&nbsp;
+&nbsp;    private &lt;T&gt; T assertIsAnythingReturned(ArrayList&lt;T&gt; result) {
+<b class="fc">&nbsp;        Assertions.assertNotNull(result);</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(1, result.size());</b>
+<b class="fc">&nbsp;        return result.getFirst();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private ArrayList&lt;Object&gt; createKeys(Object... keys) {
+<b class="fc">&nbsp;        return new ArrayList&lt;&gt;(List.of(keys));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchBooks must return null when no book is found&quot;)
+&nbsp;    public void searchBooksNoBookFound() {
+<b class="fc">&nbsp;        Assertions.assertNull(library.searchBooks(SearchByType.ID, createKeys(100)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchBooks must throw an exception when search is by name&quot;)
+&nbsp;    public void searchBooksSearchByName() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; library.searchBooks(SearchByType.NAME, createKeys(&quot;Book-1&quot;)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Return some books when search matches with type of id&quot;)
+&nbsp;    public void searchBooksSearchById() {
+<b class="fc">&nbsp;        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.ID, createKeys(1)));</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(1, foundBook.getId());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Return some books when search matches with type of author&quot;)
+&nbsp;    public void searchBooksSearchByAuthor() {
+<b class="fc">&nbsp;        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.AUTHOR, createKeys(&quot;Author-1&quot;)));</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(&quot;Author-1&quot;, foundBook.getAuthor());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Return some books when search matches with type of title&quot;)
+&nbsp;    public void searchBooksSearchByTitle() {
+<b class="fc">&nbsp;        Book foundBook = assertIsAnythingReturned(library.searchBooks(SearchByType.TITLE, createKeys(&quot;Book-1&quot;)));</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(&quot;Book-1&quot;, foundBook.getTitle());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Throw exception when key&#39;s type does not match with search type&quot;)
+&nbsp;    public void searchBooksKeyTypeNotMatchSearchType() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; library.searchBooks(SearchByType.ID, createKeys(&quot;book1&quot;, 1)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * End of searchBooks test block
+&nbsp;     */
+&nbsp;
+&nbsp;    /*
+&nbsp;     * Begin of searchStudents test block
+&nbsp;     */
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchStudents must return null when no student is found&quot;)
+&nbsp;    public void searchStudentsNoStudentFound() {
+<b class="fc">&nbsp;        Assertions.assertNull(library.searchStudents(SearchByType.ID, createKeys(100)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchStudents must throw an exception when search is by title&quot;)
+&nbsp;    public void searchStudentsByTitleThrowsException() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; library.searchStudents(SearchByType.TITLE, createKeys(&quot;Boostan&quot;)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchStudents must throw an exception when search is by author&quot;)
+&nbsp;    public void searchStudentsByAuthorThrowsException() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; library.searchStudents(SearchByType.AUTHOR, createKeys(&quot;Boostan&quot;)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Return some students when search matches with type of id&quot;)
+&nbsp;    public void searchStudentsSearchById() {
+<b class="fc">&nbsp;        Student foundStudent = assertIsAnythingReturned(library.searchStudents(SearchByType.ID, createKeys(1)));</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(1, foundStudent.getId());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;Return some students when search matches with type of name&quot;)
+&nbsp;    public void searchStudentsSearchByName() {
+<b class="fc">&nbsp;        Student foundStudent = assertIsAnythingReturned(library.searchStudents(SearchByType.NAME, createKeys(&quot;Student-1&quot;)));</b>
+<b class="fc">&nbsp;        Assertions.assertEquals(&quot;Student-1&quot;, foundStudent.getName());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    @DisplayName(&quot;searchStudent Throw exception when key&#39;s type does not match with search type&quot;)
+&nbsp;    public void searchStudentsKeyTypeNotMatchSearchType() {
+<b class="fc">&nbsp;        Assertions.assertThrows(IllegalArgumentException.class, () -&gt; library.searchStudents(SearchByType.ID, createKeys(&quot;student-1&quot;, 1)));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /*
+&nbsp;     * End of searchStudent test block
+&nbsp;     */
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-07-30 22:38</div>
+</div>
+</body>
+</html>
