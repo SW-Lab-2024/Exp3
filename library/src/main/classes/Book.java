@@ -1,4 +1,4 @@
-package main.classes;
+package classes;
 
 public class Book implements Searchable {
     private int id;
