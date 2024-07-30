@@ -46,4 +46,14 @@ public class StudentTest {
         Student student = new Student("Name", 1);
         Assertions.assertThrows(IllegalArgumentException.class, () -> student.matches(SearchByType.ID, "invalid"));
     }
+
+    @Test
+    @DisplayName("Test addBook and hasBook methods")
+    public void testAddBookAndHasBook() {
+        Student student = new Student("Name", 1);
+        Book book = new Book("Title", "Author", 1);
+        Assertions.assertFalse(student.hasBook(book));
+        student.addBook(book);
+        Assertions.assertTrue(student.hasBook(book));
+    }
 }
