@@ -28,4 +28,12 @@ public class StudentTest {
         Assertions.assertTrue(student.matches(SearchByType.ID, 1));
         Assertions.assertFalse(student.matches(SearchByType.ID, 2));
     }
+
+    @Test
+    @DisplayName("Test matches method with Name")
+    public void testMatchesWithName() {
+        Student student = new Student("Name", 1);
+        Assertions.assertTrue(student.matches(SearchByType.NAME, "Name"));
+        Assertions.assertFalse(student.matches(SearchByType.NAME, "Other"));
+    }
 }
