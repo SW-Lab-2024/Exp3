@@ -56,4 +56,15 @@ public class StudentTest {
         student.addBook(book);
         Assertions.assertTrue(student.hasBook(book));
     }
+
+    @Test
+    @DisplayName("Test removeBook method")
+    public void testRemoveBook() {
+        Student student = new Student("Name", 1);
+        Book book = new Book("Title", "Author", 1);
+        student.addBook(book);
+        Assertions.assertTrue(student.hasBook(book));
+        student.removeBook(book);
+        Assertions.assertFalse(student.hasBook(book));
+    }
 }
